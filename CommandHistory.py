@@ -21,12 +21,12 @@ def lastOcurrence(list, item):          # O(n)
 while(1):
     N = int(input("Enter N: "))
     if(N == 0): break
-    list = map(int, input().split())    # Split without arg uses space bar | O(n)
+    list = map(int, input().split())        # Split without arg uses space bar | O(n)
     result, extra = 0, 0
 
     newList = []
-
-    for pos in list:                        # O(n.m) onde m = len(list) e n = len(newList)
+                                            # Note que a solução foi semelhante a usar um dicionário
+    for pos in list:                        # O(n.m) onde m = len(list) e n = len(newList) 
         aux = lastOcurrence(newList, pos)   # O(n)              
         if(aux != -1):                      # O(1)
             result += len(newList) - aux    # O(n)

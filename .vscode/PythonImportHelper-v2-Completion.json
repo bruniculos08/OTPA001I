@@ -1,0 +1,20 @@
+[
+    {
+        "label": "lastOcurrence",
+        "kind": 2,
+        "importPath": "CommandHistory",
+        "description": "CommandHistory",
+        "peekOfCode": "def lastOcurrence(list, item):          # O(n)\n    last = -1\n    if(list == None):                   \n        return -1\n    for i in range(len(list)):\n        if(list[i] == item):\n            last = i\n    return last\nwhile(1):\n    N = int(input(\"Enter N: \"))",
+        "detail": "CommandHistory",
+        "documentation": {}
+    },
+    {
+        "label": "searchUntil",
+        "kind": 2,
+        "importPath": "CommandHistoryCorrect",
+        "description": "CommandHistoryCorrect",
+        "peekOfCode": "def searchUntil(history, updateNum, value):\n    pos = 0\n    for i in range(updateNum-1, -1):\n        pos += 1\n        if(history[i] == value): return pos\n    return -1\nwhile(1):\n    N = int(input(\"Enter N: \"))\n    if(N == 0): break                   \n    cmd = map(int, input().split()) ",
+        "detail": "CommandHistoryCorrect",
+        "documentation": {}
+    }
+]
