@@ -2,19 +2,73 @@
     {
         "label": "lastOcurrence",
         "kind": 2,
-        "importPath": "CommandHistory",
-        "description": "CommandHistory",
+        "importPath": "Semana02.CommandHistory",
+        "description": "Semana02.CommandHistory",
         "peekOfCode": "def lastOcurrence(list, item):          # O(n)\n    last = -1\n    if(list == None):                   \n        return -1\n    for i in range(len(list)):\n        if(list[i] == item):\n            last = i\n    return last\nwhile(1):\n    N = int(input(\"Enter N: \"))",
-        "detail": "CommandHistory",
+        "detail": "Semana02.CommandHistory",
         "documentation": {}
     },
     {
         "label": "searchUntil",
         "kind": 2,
-        "importPath": "CommandHistoryCorrect",
-        "description": "CommandHistoryCorrect",
+        "importPath": "Semana02.CommandHistoryCorrect",
+        "description": "Semana02.CommandHistoryCorrect",
         "peekOfCode": "def searchUntil(history, updateNum, value):\n    pos = 0\n    for i in range(updateNum-1, -1):\n        pos += 1\n        if(history[i] == value): return pos\n    return -1\nwhile(1):\n    N = int(input(\"Enter N: \"))\n    if(N == 0): break                   \n    cmd = map(int, input().split()) ",
-        "detail": "CommandHistoryCorrect",
+        "detail": "Semana02.CommandHistoryCorrect",
+        "documentation": {}
+    },
+    {
+        "label": "vector",
+        "kind": 5,
+        "importPath": "Semana05.InsertionSort",
+        "description": "Semana05.InsertionSort",
+        "peekOfCode": "vector = [1, 5, 2, 8, 7, 0, -1]\n# This code is O(n²) because in the worst case we need to move for each element...\n# ... in respective order: \n#  0, 1, 2,..., n-2, n-1\n# Summing all costs we have:\n# T(n) = 0 + 1 + 2 + ... + n-1\n# What is the same as:\n# T(n) = n(n-1)/2 \nfor i in range(0, len(vector)):\n    actualIndex = i",
+        "detail": "Semana05.InsertionSort",
+        "documentation": {}
+    },
+    {
+        "label": "multi",
+        "kind": 2,
+        "importPath": "Semana05.IntegerMultiplication",
+        "description": "Semana05.IntegerMultiplication",
+        "peekOfCode": "def multi(a, b):\n    if a == 0 or b == 0: return 0\n    if b == 1 or b == -1: return a\n    elif b > 1: return a + multi(a, b-1)\n    else: return - (a + multi(a, b+1))\nprint(multi(4, -2))",
+        "detail": "Semana05.IntegerMultiplication",
+        "documentation": {}
+    },
+    {
+        "label": "mergeSort",
+        "kind": 2,
+        "importPath": "Semana05.MergeSort",
+        "description": "Semana05.MergeSort",
+        "peekOfCode": "def mergeSort(lista):\n    if(len(lista) == 1):\n        return lista\n    end = len(lista)\n    middle = end/2\n    lista1 = lista[middle+1:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)\n    return mergeSort(lista1, lista2)",
+        "detail": "Semana05.MergeSort",
+        "documentation": {}
+    },
+    {
+        "label": "merge",
+        "kind": 2,
+        "importPath": "Semana05.MergeSort",
+        "description": "Semana05.MergeSort",
+        "peekOfCode": "def merge(lista1, lista2):\n    newList = []\n    len1 = len(lista1)\n    len2 = len(lista2)\n    for i in range(max(len(lista1), len(lista2))):\n        if(lista1[i] >= lista2[i]):\n            newList.append(lista1[i])\n        else:\n            newList.append(lista2[i])\n    return",
+        "detail": "Semana05.MergeSort",
+        "documentation": {}
+    },
+    {
+        "label": "vector",
+        "kind": 5,
+        "importPath": "Semana05.MergeSort",
+        "description": "Semana05.MergeSort",
+        "peekOfCode": "vector = [1, 5, 2, 8, 7, 0, -1]\ndef mergeSort(lista):\n    if(len(lista) == 1):\n        return lista\n    end = len(lista)\n    middle = end/2\n    lista1 = lista[middle+1:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)",
+        "detail": "Semana05.MergeSort",
+        "documentation": {}
+    },
+    {
+        "label": "vector",
+        "kind": 5,
+        "importPath": "Semana05.MergeSort",
+        "description": "Semana05.MergeSort",
+        "peekOfCode": "vector = mergeSort(vector)\nprint(vector)",
+        "detail": "Semana05.MergeSort",
         "documentation": {}
     }
 ]
