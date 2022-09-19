@@ -18,6 +18,33 @@
         "documentation": {}
     },
     {
+        "label": "changeCalc",
+        "kind": 2,
+        "importPath": "Semana05.Change",
+        "description": "Semana05.Change",
+        "peekOfCode": "def changeCalc(coinVector, pos, answers, changeValue):\n    q = int(changeValue/coinVector[pos])\n    answers.append(q)\n    changeValue = changeValue-q*coinVector[pos]\n    if(pos+1 >= len(coinVector)):\n        return answers\n    return changeCalc(coinVector, pos+1, answers, changeValue)\nprint(changeCalc(coins, 0, [], change))",
+        "detail": "Semana05.Change",
+        "documentation": {}
+    },
+    {
+        "label": "coins",
+        "kind": 5,
+        "importPath": "Semana05.Change",
+        "description": "Semana05.Change",
+        "peekOfCode": "coins = [100, 50, 25, 20, 15, 10, 5, 1]\nchange = 1030\ndef changeCalc(coinVector, pos, answers, changeValue):\n    q = int(changeValue/coinVector[pos])\n    answers.append(q)\n    changeValue = changeValue-q*coinVector[pos]\n    if(pos+1 >= len(coinVector)):\n        return answers\n    return changeCalc(coinVector, pos+1, answers, changeValue)\nprint(changeCalc(coins, 0, [], change))",
+        "detail": "Semana05.Change",
+        "documentation": {}
+    },
+    {
+        "label": "change",
+        "kind": 5,
+        "importPath": "Semana05.Change",
+        "description": "Semana05.Change",
+        "peekOfCode": "change = 1030\ndef changeCalc(coinVector, pos, answers, changeValue):\n    q = int(changeValue/coinVector[pos])\n    answers.append(q)\n    changeValue = changeValue-q*coinVector[pos]\n    if(pos+1 >= len(coinVector)):\n        return answers\n    return changeCalc(coinVector, pos+1, answers, changeValue)\nprint(changeCalc(coins, 0, [], change))",
+        "detail": "Semana05.Change",
+        "documentation": {}
+    },
+    {
         "label": "vector",
         "kind": 5,
         "importPath": "Semana05.InsertionSort",
