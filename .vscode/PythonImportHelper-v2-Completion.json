@@ -67,7 +67,7 @@
         "kind": 2,
         "importPath": "Semana05.MergeSort",
         "description": "Semana05.MergeSort",
-        "peekOfCode": "def mergeSort(lista):\n    if(len(lista) == 1):\n        return lista\n    end = len(lista)\n    middle = end/2\n    lista1 = lista[middle+1:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)\n    return mergeSort(lista1, lista2)",
+        "peekOfCode": "def mergeSort(lista):\n    if(len(lista) <= 1):\n        return lista\n    end = len(lista)\n    middle = int(end/2)\n    lista1 = lista[middle:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)\n    return merge(lista1, lista2)",
         "detail": "Semana05.MergeSort",
         "documentation": {}
     },
@@ -76,25 +76,7 @@
         "kind": 2,
         "importPath": "Semana05.MergeSort",
         "description": "Semana05.MergeSort",
-        "peekOfCode": "def merge(lista1, lista2):\n    newList = []\n    len1 = len(lista1)\n    len2 = len(lista2)\n    for i in range(max(len(lista1), len(lista2))):\n        if(lista1[i] >= lista2[i]):\n            newList.append(lista1[i])\n        else:\n            newList.append(lista2[i])\n    return",
-        "detail": "Semana05.MergeSort",
-        "documentation": {}
-    },
-    {
-        "label": "vector",
-        "kind": 5,
-        "importPath": "Semana05.MergeSort",
-        "description": "Semana05.MergeSort",
-        "peekOfCode": "vector = [1, 5, 2, 8, 7, 0, -1]\ndef mergeSort(lista):\n    if(len(lista) == 1):\n        return lista\n    end = len(lista)\n    middle = end/2\n    lista1 = lista[middle+1:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)",
-        "detail": "Semana05.MergeSort",
-        "documentation": {}
-    },
-    {
-        "label": "vector",
-        "kind": 5,
-        "importPath": "Semana05.MergeSort",
-        "description": "Semana05.MergeSort",
-        "peekOfCode": "vector = mergeSort(vector)\nprint(vector)",
+        "peekOfCode": "def merge(lista1, lista2):\n    newLista = []\n    len1 = len(lista1)\n    len2 = len(lista2)\n    while(lista1 != [] and lista2 != []):\n        item1 = lista1[0] \n        item2 = lista2[0] \n        if(item1 <= item2):\n            newLista.append(item1)\n            lista1.pop(0) # Retira o primeiro item da lista1",
         "detail": "Semana05.MergeSort",
         "documentation": {}
     }

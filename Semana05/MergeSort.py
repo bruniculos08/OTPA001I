@@ -1,33 +1,42 @@
-
-vector = [1, 5, 2, 8, 7, 0, -1]
-
 def mergeSort(lista):
-    if(len(lista) == 1):
+    if(len(lista) <= 1):
         return lista
     
     end = len(lista)
-    middle = end/2
+    middle = int(end/2)
 
-    lista1 = lista[middle+1:end]
+    lista1 = lista[middle:end]
     lista2 = lista[0:middle]
 
     lista1 = mergeSort(lista1)
     lista2 = mergeSort(lista2)
 
-    return mergeSort(lista1, lista2)
+    return merge(lista1, lista2)
 
 def merge(lista1, lista2):
-    newList = []
+    newLista = []
     len1 = len(lista1)
     len2 = len(lista2)
-    for i in range(max(len(lista1), len(lista2))):
-        if(lista1[i] >= lista2[i]):
-            newList.append(lista1[i])
+
+    while(lista1 != [] and lista2 != []):
+        item1 = lista1[0] 
+        item2 = lista2[0] 
+        if(item1 <= item2):
+            newLista.append(item1)
+            lista1.pop(0) # Retira o primeiro item da lista1
         else:
-            newList.append(lista2[i])
+            newLista.append(item2)
+            lista2.pop(0) # Retira o primeiro item da lista2
     
-    return
+    if(lista1 == []): 
+        newLista = newLista + lista2 # Concatena a newLista e a lista1
+    else:
+        newLista = newLista + lista1 # Concatena a newLista e a lista2
 
-vector = mergeSort(vector)
+    return newLista
 
-print(vector)
+if __name__ == "__main__":
+    vector = [1, 7, 3, 8, 4, 5]
+    vector = mergeSort(vector)
+    print(vector)
+    print("teste")
