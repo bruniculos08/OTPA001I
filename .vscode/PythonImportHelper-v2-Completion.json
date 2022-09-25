@@ -1,5 +1,192 @@
 [
     {
+        "label": "RETRY",
+        "importPath": "tkinter.messagebox",
+        "description": "tkinter.messagebox",
+        "isExtraImport": true,
+        "detail": "tkinter.messagebox",
+        "documentation": {}
+    },
+    {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "removeFrom",
+        "kind": 2,
+        "importPath": "Maratona.A",
+        "description": "Maratona.A",
+        "peekOfCode": "def removeFrom(lista, elemento):\n    newLista = []\n    for item in lista:\n        if(item != elemento):\n            newLista.append(item)\n    return newLista\nn = int(input())\nlistaDeAlunos = []\nlistaDeListaDeNotas = []\nfor i in range(n):",
+        "detail": "Maratona.A",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "Maratona.A",
+        "description": "Maratona.A",
+        "peekOfCode": "n = int(input())\nlistaDeAlunos = []\nlistaDeListaDeNotas = []\nfor i in range(n):\n    nome = input()\n    item = list(map(float, input().split(' ')))\n    listaDeAlunos.append(nome)\n    listaDeListaDeNotas.append(item)\nfor i, lista in enumerate(listaDeListaDeNotas, 0):\n    if(len(lista) > 3): ",
+        "detail": "Maratona.A",
+        "documentation": {}
+    },
+    {
+        "label": "listaDeAlunos",
+        "kind": 5,
+        "importPath": "Maratona.A",
+        "description": "Maratona.A",
+        "peekOfCode": "listaDeAlunos = []\nlistaDeListaDeNotas = []\nfor i in range(n):\n    nome = input()\n    item = list(map(float, input().split(' ')))\n    listaDeAlunos.append(nome)\n    listaDeListaDeNotas.append(item)\nfor i, lista in enumerate(listaDeListaDeNotas, 0):\n    if(len(lista) > 3): \n        menorNotaProva = min(lista)",
+        "detail": "Maratona.A",
+        "documentation": {}
+    },
+    {
+        "label": "listaDeListaDeNotas",
+        "kind": 5,
+        "importPath": "Maratona.A",
+        "description": "Maratona.A",
+        "peekOfCode": "listaDeListaDeNotas = []\nfor i in range(n):\n    nome = input()\n    item = list(map(float, input().split(' ')))\n    listaDeAlunos.append(nome)\n    listaDeListaDeNotas.append(item)\nfor i, lista in enumerate(listaDeListaDeNotas, 0):\n    if(len(lista) > 3): \n        menorNotaProva = min(lista)\n        #print(menorNotaProva)",
+        "detail": "Maratona.A",
+        "documentation": {}
+    },
+    {
+        "label": "deepSearchWord",
+        "kind": 2,
+        "importPath": "Maratona.G",
+        "description": "Maratona.G",
+        "peekOfCode": "def deepSearchWord(grid, word, x, y, k, direction):\n    if(k >= len(word)):\n        return True\n    k += 1\n    if direction == 'U':\n        y += 1\n    elif direction == 'D':\n        y -= 1\n    elif direction == ''\n    if grid[x][y] == 'U':",
+        "detail": "Maratona.G",
+        "documentation": {}
+    },
+    {
+        "label": "searchWord",
+        "kind": 2,
+        "importPath": "Maratona.G",
+        "description": "Maratona.G",
+        "peekOfCode": "def searchWord(grid, word):\n    for i in range(grid):\n        for j in range(grid[i]):\n            if grid[i][j] == word[0]:\n                return deepSearchWord(grid, word, i, j, 0, 'U') + deepSearchWord(grid, word, i, j, 0, 'L') + deepSearchWord(grid, word, i, j, 0, 'R') + deepSearchWord(grid, word, i, j, 0, 'D') \nn, m = input().split('')\ngrid = []\nfor i in range(n):\n    word = input()\n    row = []",
+        "detail": "Maratona.G",
+        "documentation": {}
+    },
+    {
+        "label": "grid",
+        "kind": 5,
+        "importPath": "Maratona.G",
+        "description": "Maratona.G",
+        "peekOfCode": "grid = []\nfor i in range(n):\n    word = input()\n    row = []\n    for letter in word:\n        row.append(letter)\n    grid.append(row)\nq = input()\nwords = []\nfor i in range(q):",
+        "detail": "Maratona.G",
+        "documentation": {}
+    },
+    {
+        "label": "q",
+        "kind": 5,
+        "importPath": "Maratona.G",
+        "description": "Maratona.G",
+        "peekOfCode": "q = input()\nwords = []\nfor i in range(q):\n    word = input()\n    words.append(word)\n#for word in words:",
+        "detail": "Maratona.G",
+        "documentation": {}
+    },
+    {
+        "label": "words",
+        "kind": 5,
+        "importPath": "Maratona.G",
+        "description": "Maratona.G",
+        "peekOfCode": "words = []\nfor i in range(q):\n    word = input()\n    words.append(word)\n#for word in words:",
+        "detail": "Maratona.G",
+        "documentation": {}
+    },
+    {
+        "label": "getMenorVolta",
+        "kind": 2,
+        "importPath": "Maratona.K(versão 02)",
+        "description": "Maratona.K(versão 02)",
+        "peekOfCode": "def getMenorVolta(run):\n    menor = min(run[0]['listaDeTempos'])\n    for i in range(len(run)):\n        menor = min(menor, min(run[i]['listaDeTempos']))\n    return menor\nn, v = map(int, input().split(' '))\nrun = {}\nfor i in range(n):\n    result = input().split(' ')\n    runner = result[0]",
+        "detail": "Maratona.K(versão 02)",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 5,
+        "importPath": "Maratona.K(versão 02)",
+        "description": "Maratona.K(versão 02)",
+        "peekOfCode": "run = {}\nfor i in range(n):\n    result = input().split(' ')\n    runner = result[0]\n    result = result[1:]\n    #print(result)\n    run[i] = {'racer' : runner, 'listaDeTempos' : [], 'tempoTotal' : 0}\n    for j in range(v):\n        minutos, segundos, milisegundos = map(int, result[j].split(':'))\n        run[i]['listaDeTempos'].append((minutos*60*1000)+segundos*1000+milisegundos)",
+        "detail": "Maratona.K(versão 02)",
+        "documentation": {}
+    },
+    {
+        "label": "recorde",
+        "kind": 5,
+        "importPath": "Maratona.K(versão 02)",
+        "description": "Maratona.K(versão 02)",
+        "peekOfCode": "recorde = getMenorVolta(run)\n# Ordena o dicionario pelo item ['tempoTotal'] do segundo elemento de cada tupla:\nrun = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n\n#print(run)\nnum = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:\n        num = item[1]['racer']",
+        "detail": "Maratona.K(versão 02)",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 5,
+        "importPath": "Maratona.K(versão 02)",
+        "description": "Maratona.K(versão 02)",
+        "peekOfCode": "run = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n\n#print(run)\nnum = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:\n        num = item[1]['racer']\n        break\nif num == -1:",
+        "detail": "Maratona.K(versão 02)",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "Maratona.K(versão 02)",
+        "description": "Maratona.K(versão 02)",
+        "peekOfCode": "num = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:\n        num = item[1]['racer']\n        break\nif num == -1:\n    print(\"NENHUM\")\nelse:",
+        "detail": "Maratona.K(versão 02)",
+        "documentation": {}
+    },
+    {
+        "label": "getDecimoTempo",
+        "kind": 2,
+        "importPath": "Maratona.K",
+        "description": "Maratona.K",
+        "peekOfCode": "def getDecimoTempo(run):\n    toSortTempos = []\n    for i in range(len(run)):\n        toSortTempos.append(run[i]['tempoTotal'])\n    n = len(toSortTempos)\n    if(n > 10):\n        return sorted(toSortTempos)[9]\n    else:\n        return (max(toSortTempos))\ndef getMenorVolta(run):",
+        "detail": "Maratona.K",
+        "documentation": {}
+    },
+    {
+        "label": "getMenorVolta",
+        "kind": 2,
+        "importPath": "Maratona.K",
+        "description": "Maratona.K",
+        "peekOfCode": "def getMenorVolta(run):\n    menor = min(run[0]['listaDeTempos'])\n    for i in range(len(run)):\n        menor = min(menor, min(run[i]['listaDeTempos']))\n    return menor\ndef getNum(run, menorVolta, decimoTempo):\n    num = -1\n    tempoTotalDoRecordista = INFINITE\n    # Criar outra varial para o de melhor posição\n    for i in range(len(run)):",
+        "detail": "Maratona.K",
+        "documentation": {}
+    },
+    {
+        "label": "getNum",
+        "kind": 2,
+        "importPath": "Maratona.K",
+        "description": "Maratona.K",
+        "peekOfCode": "def getNum(run, menorVolta, decimoTempo):\n    num = -1\n    tempoTotalDoRecordista = INFINITE\n    # Criar outra varial para o de melhor posição\n    for i in range(len(run)):\n        if(run[i]['tempoTotal'] <= decimoTempo and menorVolta == min(run[i]['listaDeTempos']) and run[i]['tempoTotal'] <= tempoTotalDoRecordista):\n            num = run[i]['racer']\n            tempoTotalDoRecordista = run[i]['tempoTotal']\n    return num\nresult = getNum(run, getMenorVolta(run), getDecimoTempo(run))",
+        "detail": "Maratona.K",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 5,
+        "importPath": "Maratona.K",
+        "description": "Maratona.K",
+        "peekOfCode": "run = {}\nfor i in range(n):\n    result = input().split(' ')\n    runner = result[0]\n    result = result[1:]\n    #print(result)\n    run[i] = {'racer' : runner, 'listaDeTempos' : [], 'tempoTotal' : 0}\n    for j in range(v):\n        minutos, segundos, milisegundos = map(int, result[j].split(':'))\n        run[i]['listaDeTempos'].append((minutos*60*1000)+segundos*1000+milisegundos)",
+        "detail": "Maratona.K",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "Maratona.K",
+        "description": "Maratona.K",
+        "peekOfCode": "result = getNum(run, getMenorVolta(run), getDecimoTempo(run))\nif(result != -1):\n    print(result)\nelse:\n    print(\"NENHUM\")",
+        "detail": "Maratona.K",
+        "documentation": {}
+    },
+    {
         "label": "lastOcurrence",
         "kind": 2,
         "importPath": "Semana02.CommandHistory",
