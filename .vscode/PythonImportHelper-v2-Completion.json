@@ -254,7 +254,7 @@
         "kind": 2,
         "importPath": "Semana05.MergeSort",
         "description": "Semana05.MergeSort",
-        "peekOfCode": "def mergeSort(lista):\n    if(len(lista) <= 1):\n        return lista\n    end = len(lista)\n    middle = int(end/2)\n    lista1 = lista[middle:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)\n    return merge(lista1, lista2)",
+        "peekOfCode": "def mergeSort(lista):\n    print(lista)\n    if(len(lista) <= 1):\n        return lista\n    end = len(lista)\n    middle = int(end/2)\n    lista1 = lista[middle:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)",
         "detail": "Semana05.MergeSort",
         "documentation": {}
     },
@@ -263,8 +263,44 @@
         "kind": 2,
         "importPath": "Semana05.MergeSort",
         "description": "Semana05.MergeSort",
-        "peekOfCode": "def merge(lista1, lista2):\n    newLista = []\n    len1 = len(lista1)\n    len2 = len(lista2)\n    while(lista1 != [] and lista2 != []):\n        item1 = lista1[0] \n        item2 = lista2[0] \n        if(item1 <= item2):\n            newLista.append(item1)\n            lista1.pop(0) # Retira o primeiro item da lista1",
+        "peekOfCode": "def merge(lista1, lista2):\n    newLista = []\n    #len1 = len(lista1)\n    #len2 = len(lista2)\n    while(lista1 != [] and lista2 != []):\n        item1 = lista1[0] \n        item2 = lista2[0] \n        if(item1 <= item2):\n            newLista.append(item1)\n            lista1.pop(0) # Retira o primeiro item da lista1",
         "detail": "Semana05.MergeSort",
+        "documentation": {}
+    },
+    {
+        "label": "mergeSort",
+        "kind": 2,
+        "importPath": "Semana05.MergeSortWithoutPop",
+        "description": "Semana05.MergeSortWithoutPop",
+        "peekOfCode": "def mergeSort(lista):\n    print(lista)\n    if(len(lista) <= 1):\n        return lista\n    end = len(lista)\n    middle = int(end/2)\n    lista1 = lista[middle:end]\n    lista2 = lista[0:middle]\n    lista1 = mergeSort(lista1)\n    lista2 = mergeSort(lista2)",
+        "detail": "Semana05.MergeSortWithoutPop",
+        "documentation": {}
+    },
+    {
+        "label": "merge",
+        "kind": 2,
+        "importPath": "Semana05.MergeSortWithoutPop",
+        "description": "Semana05.MergeSortWithoutPop",
+        "peekOfCode": "def merge(lista1, lista2):\n    newLista = []\n    len1 = len(lista1)                  # Como a complexidade de len() é O(1) o algoritmo funciona com a mesma...\n    len2 = len(lista2)                  # ... complexidade qual teria se fizessemo passando os tamanhos como argumentos.\n    index1, index2 = 0, 0\n    while(index1 < len1 and index2 < len2):\n        item1 = lista1[index1] \n        item2 = lista2[index2]  \n        if(item1 <= item2):\n            newLista.append(item1)",
+        "detail": "Semana05.MergeSortWithoutPop",
+        "documentation": {}
+    },
+    {
+        "label": "build_max_heap",
+        "kind": 2,
+        "importPath": "Semana06.HeapSort",
+        "description": "Semana06.HeapSort",
+        "peekOfCode": "def build_max_heap():\n    return\ndef heap_sort(vetor, n):\n    return",
+        "detail": "Semana06.HeapSort",
+        "documentation": {}
+    },
+    {
+        "label": "heap_sort",
+        "kind": 2,
+        "importPath": "Semana06.HeapSort",
+        "description": "Semana06.HeapSort",
+        "peekOfCode": "def heap_sort(vetor, n):\n    return",
+        "detail": "Semana06.HeapSort",
         "documentation": {}
     }
 ]

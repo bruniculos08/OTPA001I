@@ -17,23 +17,24 @@ def mergeSort(lista):
 
 def merge(lista1, lista2):
     newLista = []
-    #len1 = len(lista1)
-    #len2 = len(lista2)
+    len1 = len(lista1)                  # Como a complexidade de len() é O(1) o algoritmo funciona com a mesma...
+    len2 = len(lista2)                  # ... complexidade qual teria se fizessemo passando os tamanhos como argumentos.
+    index1, index2 = 0, 0
 
-    while(lista1 != [] and lista2 != []):
-        item1 = lista1[0] 
-        item2 = lista2[0] 
+    while(index1 < len1 and index2 < len2):
+        item1 = lista1[index1] 
+        item2 = lista2[index2]  
         if(item1 <= item2):
             newLista.append(item1)
-            lista1.pop(0) # Retira o primeiro item da lista1
+            index1 += 1
         else:
             newLista.append(item2)
-            lista2.pop(0) # Retira o primeiro item da lista2
+            index2 += 1
     
-    if(lista1 == []): 
-        newLista = newLista + lista2 # Concatena a newLista e a lista1
+    if(index1 == len1): 
+        newLista = newLista + lista2[index2:] # Concatena a newLista e a lista1
     else:
-        newLista = newLista + lista1 # Concatena a newLista e a lista2
+        newLista = newLista + lista1[index1:] # Concatena a newLista e a lista2
 
     return newLista
 
