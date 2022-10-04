@@ -1,3 +1,5 @@
+import time
+
 def mergeSort(lista):
     print(lista)
 
@@ -38,7 +40,8 @@ def merge(lista1, lista2):
     return newLista
 
 if __name__ == "__main__":
-    vector = [1, 7, 3, 8, 4, 5]
+    #vector = [1, 7, 3, 8, 4, 5]
+    vector = [ i for i in range(10000000000000, 0 , -1) ] + [ i for i in range(1, 10000000000, 2)] 
     vector = mergeSort(vector)
     print(vector)
     print("teste")
