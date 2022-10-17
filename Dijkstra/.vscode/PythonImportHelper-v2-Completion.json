@@ -37,7 +37,7 @@
         "kind": 2,
         "importPath": "Dijkstra",
         "description": "Dijkstra",
-        "peekOfCode": "def dijkstra(start, end, graph, verticesNum):\n    start, end = start-1, end-1\n    # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice: \n    Marks = [int(INFINITE) for i in range(verticesNum)]\n    Marks[start] = 0\n    # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Pre = [-1 for i in range(verticesNum)]\n    Pre[start] = [start]\n    # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:\n    isTemp = [True for i in range(verticesNum)]",
+        "peekOfCode": "def dijkstra(start, end, graph, verticesNum):\n    start = start-1\n    end = end-1\n    # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice: \n    Marks = [INFINITE for i in range(verticesNum)]\n    Marks[start] = 0\n    # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Pre = [-1 for i in range(verticesNum)]\n    Pre[start] = [start]\n    # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:",
         "detail": "Dijkstra",
         "documentation": {}
     }

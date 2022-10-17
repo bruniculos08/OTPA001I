@@ -30,13 +30,14 @@ def createAdjMatrix():
         # (5.1) Suppose the edges are enumerated from 1 to n:
         MatrixAdj[verticeA - 1][verticeB - 1], MatrixAdj[verticeB - 1][verticeA - 1] = weightAtoB, weightAtoB
         
-    return MatrixAdj
+    return MatrixAdj, verticesNum
 
 def dijkstra(start, end, graph, verticesNum):
-    start, end = start-1, end-1
+    start = start-1
+    end = end-1
     
     # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice: 
-    Marks = [int(INFINITE) for i in range(verticesNum)]
+    Marks = [INFINITE for i in range(verticesNum)]
     Marks[start] = 0
 
     # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
@@ -46,46 +47,63 @@ def dijkstra(start, end, graph, verticesNum):
     # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:
     isTemp = [True for i in range(verticesNum)]
     isTemp[start] = False
-    
-    # (4) This list will cotain the indexes of vertices of the smallest path between the end vertice and the start vertice:
-    path = [start]
 
-    # (5) The path always starts with the start vertice and because Mark[start][start] = 0, minMark = start:
+    # (4) The path always starts with the start vertice and because Mark[start][start] = 0, minMark = start:
     actualVertice = start
     minMark = start
 
-    # (6) The algorithm will finish when the smallest path from the start vertice to the end vertice is computed, what...
+    # (5) The algorithm will finish when the smallest path from the start vertice to the end vertice is computed, what...
     # ... happens when the vertice is removed from the Temporary Set:
-    while(isTemp[end] == False):
-        
-        isTemp[actualVertice] = True
+    while(actualVertice != end):
 
-        for i in enumerate(isTemp):
-            if(isTemp == False):
-                if(Marks[i] > Marks[actualVertice] + graph[i][actualVertice]):
+        # (5.1) Looking for each vertex in the Temporary Set:
+        for i in range(verticesNum):
+            if(isTemp[i] == True):
+                
+                # (5.2) If there is a smallest path from the start vertice to vi:
+                if(graph[i][actualVertice] != -1 and Marks[i] > Marks[actualVertice] + graph[i][actualVertice]):
                     
                     Marks[i] = Marks[actualVertice] + graph[i][actualVertice]
                     Pre[i] = actualVertice
 
-                    # () Looking witch one is the vertice with the lowest mark will save us time because if we didn't do that...
+                    # (5.3) Looking witch one is the vertice with the lowest mark will save us time because if we didn't do that...
                     # ... we would need to search this in the list Marks and because it's a list (and not a dictionary) the time...
                     # ... complexity is O(n), so now we have O(1) to get the vertice with minimum mark:
-                    if(isTemp[minMark] == False):
-                        minMark = i
-                    elif(Marks[i] < Marks[minMark]):
-                        minMark = i
-                    
+                if(isTemp[minMark] == False):
+                    minMark = i
+                elif(Marks[i] < Marks[minMark]):
+                    minMark = i
 
-
+        # (6) If the lowest mark vertice was not actualized it means there is no more edges to search and then...
+        # ... there is no path between the start vertice to end vertice:
+        if(minMark == actualVertice and isTemp[minMark] == False):
+            print(actualVertice + 1)
+            return [], -1
+                        
+        # (7) The new vertice to be analyzed and the next to be removed from the Temporary Set is the vertice with... 
+        # ... the lowest mark: 
+        actualVertice = minMark
         
-        
+        # (8) By definition the actual vertice being analyzed is not in Temporary Set:
+        isTemp[minMark] = False
 
-                    
-    return path
+    # (9) The smallest distance between the start vertice to the end vertice is equal to Mark[end]:
+    distance = Marks[end]
+
+    # (10) Building the smallest path:
+    path = [end+1]
+    while(True):
+        index = Pre[path[-1]-1]
+        path.append(index+1)
+        if(index == start):
+            break
+    path.reverse()
+
+    return path, distance
 
 
 if __name__ == "__main__":
-    graph = createAdjMatrix()
-    for row in graph: 
-        print(row)
-    pass
+    graph, verticesNum = createAdjMatrix()
+    path, distance = dijkstra(1, 4, graph, verticesNum)
+    print(path)
+    print(distance)
