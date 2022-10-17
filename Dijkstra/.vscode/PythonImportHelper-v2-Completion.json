@@ -1,5 +1,29 @@
 [
     {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "Infinity",
+        "importPath": "numpy",
+        "description": "numpy",
+        "isExtraImport": true,
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
         "label": "createAdjMatrix",
         "kind": 2,
         "importPath": "Dijkstra",
@@ -9,11 +33,11 @@
         "documentation": {}
     },
     {
-        "label": "Dijkstra",
+        "label": "dijkstra",
         "kind": 2,
         "importPath": "Dijkstra",
         "description": "Dijkstra",
-        "peekOfCode": "def Dijkstra(start, end, graph):\n    return\nif __name__ == \"__main__\":\n    graph = createAdjMatrix()\n    for row in graph: \n        print(row)\n    pass",
+        "peekOfCode": "def dijkstra(start, end, graph, verticesNum):\n    start, end = start-1, end-1\n    # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice: \n    Marks = [int(INFINITE) for i in range(verticesNum)]\n    Marks[start] = 0\n    # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Pre = [-1 for i in range(verticesNum)]\n    Pre[start] = [start]\n    # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:\n    isTemp = [True for i in range(verticesNum)]",
         "detail": "Dijkstra",
         "documentation": {}
     }
