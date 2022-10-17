@@ -29,10 +29,10 @@ def createAdjMatrix():
         verticeA, verticeB, weightAtoB = map(int, rows[i].split())
         
         # (5.1) Suppose the graph is undirected (comment the next line if you don't want it):
-        MatrixAdj[verticeA - 1][verticeB - 1], MatrixAdj[verticeB - 1][verticeA - 1] = weightAtoB, weightAtoB
+        #MatrixAdj[verticeA - 1][verticeB - 1], MatrixAdj[verticeB - 1][verticeA - 1] = weightAtoB, weightAtoB
 
         # (5.2) Or suppose the graph is directed (comment this line if you don't want it):
-        #MatrixAdj[verticeA - 1][verticeB - 1] = weightAtoB
+        MatrixAdj[verticeA - 1][verticeB - 1] = weightAtoB
         
     return MatrixAdj, verticesNum
 
@@ -46,7 +46,7 @@ def dijkstra(start, end, graph, verticesNum):
 
     # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
     Pre = [-1 for i in range(verticesNum)]
-    Pre[start] = [start]
+    Pre[start] = start
     
     # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:
     isTemp = [True for i in range(verticesNum)]
@@ -63,6 +63,10 @@ def dijkstra(start, end, graph, verticesNum):
         # (5.1) Looking for each vertex in the Temporary Set:
         for i in range(verticesNum):
             if(isTemp[i] == True):
+
+                print(f"Marks: {Marks}")
+                print(f"Pre: {Pre}")
+                print(f"Temp: {isTemp}")
                 
                 # (5.2) If there is a smallest path from the start vertice to vi:
                 if(graph[actualVertice][i] != -1 and Marks[i] > Marks[actualVertice] + graph[actualVertice][i]):
@@ -70,17 +74,19 @@ def dijkstra(start, end, graph, verticesNum):
                     Marks[i] = Marks[actualVertice] + graph[actualVertice][i]
                     Pre[i] = actualVertice
 
-                    # (5.3) Looking witch one is the vertice with the lowest mark will save us time because if we didn't do that...
-                    # ... we would need to search this in the list Marks and because it's a list (and not a dictionary) the time...
-                    # ... complexity is O(n), so now we have O(1) to get the vertice with minimum mark:
+                # (5.3) Looking witch one is the vertice with the lowest mark will save us time because if we didn't do that...
+                # ... we would need to search this in the list Marks and because it's a list (and not a dictionary) the time...
+                # ... complexity is O(n), so now we have O(1) to get the vertice with minimum mark:
                 if(isTemp[minMark] == False):
+                    print(f"minMark changed from {minMark+1} to {i+1}")
                     minMark = i
                 elif(Marks[i] < Marks[minMark]):
+                    print(f"minMark changed from {minMark+1} to {i+1}")
                     minMark = i
 
         # (6) If the lowest mark vertice was not actualized it means there is no more edges to search and then...
         # ... there is no path between the start vertice to end vertice:
-        if(minMark == actualVertice and isTemp[minMark] == False):
+        if(Marks[minMark] == INFINITE):
             print(actualVertice + 1)
             return [], -1
                         
@@ -98,6 +104,10 @@ def dijkstra(start, end, graph, verticesNum):
     path = [end+1]
     while(True):
         index = Pre[path[-1]-1]
+        
+        #if(index == -1):
+        #    return [], -1
+        
         path.append(index+1)
         if(index == start):
             break
