@@ -1,0 +1,20 @@
+[
+    {
+        "label": "createAdjMatrix",
+        "kind": 2,
+        "importPath": "Dijkstra",
+        "description": "Dijkstra",
+        "peekOfCode": "def createAdjMatrix():\n    # (1) Path of the file containing the graph edges with weights:\n    generalPath = \"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\Dijkstra\"\n    # (2) Opening the file:\n    with open(generalPath + \"\\\\Graph.txt\") as file:\n        # (2.1) Getting a vector of strings with every row from the file:\n        rows = file.readlines()\n    # (3) Getting the number of edgers:\n    verticesNum = int(rows[0])\n    # (4) Starting the adjacency matrix:",
+        "detail": "Dijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "Dijkstra",
+        "kind": 2,
+        "importPath": "Dijkstra",
+        "description": "Dijkstra",
+        "peekOfCode": "def Dijkstra(start, end, graph):\n    return\nif __name__ == \"__main__\":\n    graph = createAdjMatrix()\n    for row in graph: \n        print(row)\n    pass",
+        "detail": "Dijkstra",
+        "documentation": {}
+    }
+]
