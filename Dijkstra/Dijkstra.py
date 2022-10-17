@@ -1,4 +1,4 @@
-# Dijkstra algorithm considering a undirected graph
+# Dijkstra algorithm
 
 from asyncio.windows_events import INFINITE
 from math import *
@@ -24,11 +24,15 @@ def createAdjMatrix():
         # (4.1) The weight between an edge and it self is always 0:
         MatrixAdj[i][i] = 0
 
-    # (5) Placing the edges:
+    # (5) Placing the edges (supposing the edges are enumerated from 1 to n):
     for i in range(1, len(rows)):
         verticeA, verticeB, weightAtoB = map(int, rows[i].split())
-        # (5.1) Suppose the edges are enumerated from 1 to n:
+        
+        # (5.1) Suppose the graph is undirected (comment the next line if you don't want it):
         MatrixAdj[verticeA - 1][verticeB - 1], MatrixAdj[verticeB - 1][verticeA - 1] = weightAtoB, weightAtoB
+
+        # (5.2) Or suppose the graph is directed (comment this line if you don't want it):
+        #MatrixAdj[verticeA - 1][verticeB - 1] = weightAtoB
         
     return MatrixAdj, verticesNum
 
@@ -61,9 +65,9 @@ def dijkstra(start, end, graph, verticesNum):
             if(isTemp[i] == True):
                 
                 # (5.2) If there is a smallest path from the start vertice to vi:
-                if(graph[i][actualVertice] != -1 and Marks[i] > Marks[actualVertice] + graph[i][actualVertice]):
+                if(graph[actualVertice][i] != -1 and Marks[i] > Marks[actualVertice] + graph[actualVertice][i]):
                     
-                    Marks[i] = Marks[actualVertice] + graph[i][actualVertice]
+                    Marks[i] = Marks[actualVertice] + graph[actualVertice][i]
                     Pre[i] = actualVertice
 
                     # (5.3) Looking witch one is the vertice with the lowest mark will save us time because if we didn't do that...
