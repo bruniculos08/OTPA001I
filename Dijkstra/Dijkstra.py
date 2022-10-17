@@ -64,9 +64,9 @@ def dijkstra(start, end, graph, verticesNum):
         for i in range(verticesNum):
             if(isTemp[i] == True):
 
-                print(f"Marks: {Marks}")
-                print(f"Pre: {Pre}")
-                print(f"Temp: {isTemp}")
+                #print(f"Marks: {Marks}")
+                #print(f"Pre: {Pre}")
+                #print(f"Temp: {isTemp}")
                 
                 # (5.2) If there is a smallest path from the start vertice to vi:
                 if(graph[actualVertice][i] != -1 and Marks[i] > Marks[actualVertice] + graph[actualVertice][i]):
@@ -78,15 +78,15 @@ def dijkstra(start, end, graph, verticesNum):
                 # ... we would need to search this in the list Marks and because it's a list (and not a dictionary) the time...
                 # ... complexity is O(n), so now we have O(1) to get the vertice with minimum mark:
                 if(isTemp[minMark] == False):
-                    print(f"minMark changed from {minMark+1} to {i+1}")
+                    #print(f"minMark changed from {minMark+1} to {i+1}")
                     minMark = i
                 elif(Marks[i] < Marks[minMark]):
-                    print(f"minMark changed from {minMark+1} to {i+1}")
+                    #print(f"minMark changed from {minMark+1} to {i+1}")
                     minMark = i
 
         # (6) If the lowest mark vertice was not actualized it means there is no more edges to search and then...
         # ... there is no path between the start vertice to end vertice:
-        if(Marks[minMark] == INFINITE):
+        if(minMark == actualVertice or Marks[minMark] == INFINITE):
             print(actualVertice + 1)
             return [], -1
                         
