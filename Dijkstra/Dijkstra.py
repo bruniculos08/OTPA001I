@@ -41,15 +41,15 @@ def dijkstra(start, end, graph, verticesNum):
     end = end-1
     
     # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice: 
-    Marks = [INFINITE for i in range(verticesNum)]
+    Marks = [INFINITE for i in range(verticesNum)] # O(|V(G)|)
     Marks[start] = 0
 
     # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
-    Pre = [-1 for i in range(verticesNum)]
+    Pre = [-1 for i in range(verticesNum)] # O(|V(G)|)
     Pre[start] = start
     
     # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:
-    isTemp = [True for i in range(verticesNum)]
+    isTemp = [True for i in range(verticesNum)] # O(|V(G)|)
     isTemp[start] = False
 
     # (4) The path always starts with the start vertice and because Mark[start][start] = 0, minMark = start:
@@ -58,10 +58,10 @@ def dijkstra(start, end, graph, verticesNum):
 
     # (5) The algorithm will finish when the smallest path from the start vertice to the end vertice is computed, what...
     # ... happens when the vertice is removed from the Temporary Set:
-    while(actualVertice != end):
+    while(actualVertice != end): # O(|V(G)|²)
 
         # (5.1) Looking for each vertex in the Temporary Set:
-        for i in range(verticesNum):
+        for i in range(verticesNum): # O(|V(G)|)
             if(isTemp[i] == True):
                 
                 # (5.2) If there is a smallest path from the start vertice to vi:
@@ -80,27 +80,27 @@ def dijkstra(start, end, graph, verticesNum):
 
         # (6) If the lowest mark vertice was not actualized it means there is no more edges to search and then...
         # ... there is no path between the start vertice to end vertice:
-        if(minMark == actualVertice or Marks[minMark] == INFINITE):
+        if(minMark == actualVertice or Marks[minMark] == INFINITE): # O(1)
             return [], -1
                         
         # (7) The new vertice to be analyzed and the next to be removed from the Temporary Set is the vertice with... 
         # ... the lowest mark: 
-        actualVertice = minMark
+        actualVertice = minMark # O(1)
         
         # (8) By definition the actual vertice being analyzed is not in Temporary Set:
-        isTemp[minMark] = False
+        isTemp[minMark] = False # O(1)
 
     # (9) The smallest distance between the start vertice to the end vertice is equal to Mark[end]:
-    distance = Marks[end]
+    distance = Marks[end] # O(1)
 
     # (10) Building the smallest path:
     path = [end+1]
-    while(True):
+    while(True): # O(|E(G)|)
         index = Pre[path[-1]-1]
         path.append(index+1)
         if(index == start):
             break
-    path.reverse()
+    path.reverse() # O(|E(G)|)
 
     return path, distance
 
