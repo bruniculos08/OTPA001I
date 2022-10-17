@@ -18,8 +18,8 @@ def createAdjMatrix():
     verticesNum = int(rows[0])
 
     # (4) Starting the adjacency matrix:
-    MatrixAdj= [[-1 for i in range(verticesNum)] for j in range(verticesNum)]
-    # Note: MatrixAdj[i][j] == -1 means that there is no edge between the vertices vi and vj.
+    MatrixAdj= [[INFINITE for i in range(verticesNum)] for j in range(verticesNum)]
+    # Note: MatrixAdj[i][j] == INFINITE means that there is no edge between the vertices vi and vj.
     for i in range(verticesNum):
         # (4.1) The weight between an edge and it self is always 0:
         MatrixAdj[i][i] = 0
@@ -31,7 +31,7 @@ def createAdjMatrix():
         # (5.1) Suppose the graph is undirected (comment the next line if you don't want it):
         #MatrixAdj[verticeA - 1][verticeB - 1], MatrixAdj[verticeB - 1][verticeA - 1] = weightAtoB, weightAtoB
 
-        # (5.2) Or suppose the graph is directed (comment this line if you don't want it):
+        # (5.2) Or suppose the graph is directed (comment the next line if you don't want it):
         MatrixAdj[verticeA - 1][verticeB - 1] = weightAtoB
         
     return MatrixAdj, verticesNum
@@ -63,13 +63,9 @@ def dijkstra(start, end, graph, verticesNum):
         # (5.1) Looking for each vertex in the Temporary Set:
         for i in range(verticesNum):
             if(isTemp[i] == True):
-
-                #print(f"Marks: {Marks}")
-                #print(f"Pre: {Pre}")
-                #print(f"Temp: {isTemp}")
                 
                 # (5.2) If there is a smallest path from the start vertice to vi:
-                if(graph[actualVertice][i] != -1 and Marks[i] > Marks[actualVertice] + graph[actualVertice][i]):
+                if(graph[actualVertice][i] != INFINITE and Marks[i] > Marks[actualVertice] + graph[actualVertice][i]):
                     
                     Marks[i] = Marks[actualVertice] + graph[actualVertice][i]
                     Pre[i] = actualVertice
@@ -78,16 +74,13 @@ def dijkstra(start, end, graph, verticesNum):
                 # ... we would need to search this in the list Marks and because it's a list (and not a dictionary) the time...
                 # ... complexity is O(n), so now we have O(1) to get the vertice with minimum mark:
                 if(isTemp[minMark] == False):
-                    #print(f"minMark changed from {minMark+1} to {i+1}")
                     minMark = i
                 elif(Marks[i] < Marks[minMark]):
-                    #print(f"minMark changed from {minMark+1} to {i+1}")
                     minMark = i
 
         # (6) If the lowest mark vertice was not actualized it means there is no more edges to search and then...
         # ... there is no path between the start vertice to end vertice:
         if(minMark == actualVertice or Marks[minMark] == INFINITE):
-            print(actualVertice + 1)
             return [], -1
                         
         # (7) The new vertice to be analyzed and the next to be removed from the Temporary Set is the vertice with... 
@@ -104,10 +97,6 @@ def dijkstra(start, end, graph, verticesNum):
     path = [end+1]
     while(True):
         index = Pre[path[-1]-1]
-        
-        #if(index == -1):
-        #    return [], -1
-        
         path.append(index+1)
         if(index == start):
             break
@@ -119,5 +108,5 @@ def dijkstra(start, end, graph, verticesNum):
 if __name__ == "__main__":
     graph, verticesNum = createAdjMatrix()
     path, distance = dijkstra(1, 4, graph, verticesNum)
-    print(path)
-    print(distance)
+    print(f"path = {path}")
+    print(f"distance = {distance}")
