@@ -67,6 +67,33 @@
         "documentation": {}
     },
     {
+        "label": "edges",
+        "kind": 5,
+        "importPath": "Dijkstra.ImprovedDijkstra",
+        "description": "Dijkstra.ImprovedDijkstra",
+        "peekOfCode": "edges = {'A' : {'D' : 5, 'C' : 3, 'B' : 4}, 'E' : {'A': 1, 'D':2}}\n#print(edges['A'].keys())\nedges['B'] = {'E': 1, 'D': 2}\n# lamba é uma função que recebe um elemento kv e retorna kv[1]['D'], mas note que, nesse caso o dict é uma tupla por isso kv[1]:\nprint(edges)\nprint(edges.items())\n#edges = (sorted(edges.items(), key=lambda kv: kv[1]['D']))\n#print(edges)",
+        "detail": "Dijkstra.ImprovedDijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "edges['B']",
+        "kind": 5,
+        "importPath": "Dijkstra.ImprovedDijkstra",
+        "description": "Dijkstra.ImprovedDijkstra",
+        "peekOfCode": "edges['B'] = {'E': 1, 'D': 2}\n# lamba é uma função que recebe um elemento kv e retorna kv[1]['D'], mas note que, nesse caso o dict é uma tupla por isso kv[1]:\nprint(edges)\nprint(edges.items())\n#edges = (sorted(edges.items(), key=lambda kv: kv[1]['D']))\n#print(edges)",
+        "detail": "Dijkstra.ImprovedDijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "#edges",
+        "kind": 5,
+        "importPath": "Dijkstra.ImprovedDijkstra",
+        "description": "Dijkstra.ImprovedDijkstra",
+        "peekOfCode": "#edges = (sorted(edges.items(), key=lambda kv: kv[1]['D']))\n#print(edges)",
+        "detail": "Dijkstra.ImprovedDijkstra",
+        "documentation": {}
+    },
+    {
         "label": "removeFrom",
         "kind": 2,
         "importPath": "Maratona.A",
@@ -170,7 +197,7 @@
         "kind": 5,
         "importPath": "Maratona.K(versão 02)",
         "description": "Maratona.K(versão 02)",
-        "peekOfCode": "recorde = getMenorVolta(run)\n# Ordena o dicionario pelo item ['tempoTotal'] do segundo elemento de cada tupla:\nrun = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n\n#print(run)\nnum = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:\n        num = item[1]['racer']",
+        "peekOfCode": "recorde = getMenorVolta(run)\n# Ordena o dicionario pelo item ['tempoTotal'] do segundo elemento de cada tupla:\nrun = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n\n# lamba é uma função que recebe um elemento kv e retorna kv[1]['tempoTotal'], mas note que, nesse caso o dict é uma tupla por isso kv[1]:\n#print(run)\nnum = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:",
         "detail": "Maratona.K(versão 02)",
         "documentation": {}
     },
@@ -179,7 +206,7 @@
         "kind": 5,
         "importPath": "Maratona.K(versão 02)",
         "description": "Maratona.K(versão 02)",
-        "peekOfCode": "run = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n\n#print(run)\nnum = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:\n        num = item[1]['racer']\n        break\nif num == -1:",
+        "peekOfCode": "run = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n\n# lamba é uma função que recebe um elemento kv e retorna kv[1]['tempoTotal'], mas note que, nesse caso o dict é uma tupla por isso kv[1]:\n#print(run)\nnum = -1\nfor item in run:\n    #print(item['listaDeTempos'])\n    #print(item[1]['listaDeTempos'])\n    if min(item[1]['listaDeTempos']) == recorde:\n        num = item[1]['racer']\n        break",
         "detail": "Maratona.K(versão 02)",
         "documentation": {}
     },

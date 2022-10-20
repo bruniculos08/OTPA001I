@@ -20,6 +20,8 @@ for i in range(n):
 recorde = getMenorVolta(run)
 # Ordena o dicionario pelo item ['tempoTotal'] do segundo elemento de cada tupla:
 run = (sorted(run.items(), key=lambda kv: kv[1]['tempoTotal'])[0:10]) # lenght é n-1 para 0:n
+# lamba é uma função que recebe um elemento kv e retorna kv[1]['tempoTotal'], mas note que, nesse caso o dict é uma tupla por isso kv[1]:
+
 
 #print(run)
 
