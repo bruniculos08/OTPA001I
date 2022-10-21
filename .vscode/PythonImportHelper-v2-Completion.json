@@ -153,7 +153,7 @@
         "kind": 2,
         "importPath": "Dijkstra with Heap.Dijkstra",
         "description": "Dijkstra with Heap.Dijkstra",
-        "peekOfCode": "def createEdgesDictionary():\n    # (1) Path of the file containing the graph edges with weights:\n    generalPath = \"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\Dijkstra Improved\"\n    # (2) Opening the file:\n    with open(generalPath + \"\\\\Graph.txt\") as file:\n        # (2.1) Getting a vector of strings with every row from the file:\n        rows = file.readlines()\n    # (3) Creating a dictionary to store de edges in the graph:\n    graph = {}\n    for i in range(0, len(rows)):",
+        "peekOfCode": "def createEdgesDictionary():\n    # (1) Path of the file containing the graph edges with weights:\n    generalPath = \"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\Dijkstra with Heap\"\n    # (2) Opening the file:\n    with open(generalPath + \"\\\\Graph.txt\") as file:\n        # (2.1) Getting a vector of strings with every row from the file:\n        rows = file.readlines()\n    # (3) Creating a dictionary to store de edges in the graph:\n    graph = {}\n    for i in range(0, len(rows)):",
         "detail": "Dijkstra with Heap.Dijkstra",
         "documentation": {}
     },
@@ -162,7 +162,7 @@
         "kind": 2,
         "importPath": "Dijkstra with Heap.Dijkstra",
         "description": "Dijkstra with Heap.Dijkstra",
-        "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Mark_heap = []\n    Predecessor = {}\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:\n    for vertex in graph.keys():\n        Mark[vertex] = INFINITE\n    Mark[start] = 0\n    # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Predecessor[start] = start",
+        "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Predecessor = {}\n    isNotTemp = {}\n    PriorityQueue = []\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice and...\n    # ...isNotTemp[v] tells if the vertice has a permanent mark:\n    for vertice in graph.keys():\n        Mark[vertice] = INFINITE\n        isNotTemp[vertice] = False",
         "detail": "Dijkstra with Heap.Dijkstra",
         "documentation": {}
     },

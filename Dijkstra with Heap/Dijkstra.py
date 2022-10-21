@@ -8,7 +8,7 @@ from numpy import Infinity
 
 def createEdgesDictionary():
     # (1) Path of the file containing the graph edges with weights:
-    generalPath = "C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\Dijkstra Improved"
+    generalPath = "C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\Dijkstra with Heap"
 
     # (2) Opening the file:
     with open(generalPath + "\\Graph.txt") as file:
@@ -36,48 +36,64 @@ def createEdgesDictionary():
 def dijkstra(start, end, graph):
     
     Mark = {}
-    Mark_heap = []
     Predecessor = {}
+    isNotTemp = {}
+    PriorityQueue = []
 
-    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:
-    for vertex in graph.keys():
-        Mark[vertex] = INFINITE
+    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice and...
+    # ...isNotTemp[v] tells if the vertice has a permanent mark:
+    for vertice in graph.keys():
+        Mark[vertice] = INFINITE
+        isNotTemp[vertice] = False
     Mark[start] = 0
 
     # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
     Predecessor[start] = start
-    
-    # (3) The Temporary Set of vertices:
-    NotTemporary = set()
 
-    # (4) The path always starts with the start vertice and because Mark[start][start] = 0, minMark = start:
-    actualVertice = start
-    minMark = start
+    # (3) The priority queue will be a minimum heap and the minimum value will be the smallest distance discovered on the last...
+    # ... iteration, what is always the smallest mark (except when the smallest mark for determined vertice in top of the queue was...
+    # ... discovered later and then removed from the queue before):
+    heappush(PriorityQueue, (0, start))
 
-    # (5) The algorithm will finish when the smallest path from the start vertice to the end vertice is computed, what...
-    # ... happens when the vertice is removed from the Temporary Set:
-    while(actualVertice != end): # O(|V(G)|²)
+    # (4) While the priority queue is not empty:
+    while(len(PriorityQueue) != 0):
+        # (4.1) Pop the first element off the priority queue, i. e., the element with the smallest mark discovered on the previous iteration:
+        item = heappop(PriorityQueue)
+        # (4.2) Getting the vertice with the smallest mark according to the priority queue:
+        actualVertice = item[1]
+        # (4.3) Getting the value of the smallest mark according to the priority queue:
+        minMarkPQ = item[0]
+        # (4.4) Removing the actual vertice from the Temporary Set:
+        isNotTemp[actualVertice] = True
 
-        NotTemporary.add(actualVertice)
-        
-        for vertice in graph[actualVertice]:
-            if vertice not in NotTemporary:
-                if (vertice not in Mark) or (Mark[vertice] > Mark[actualVertice] + graph[actualVertice][vertice]):
+        # (4.5) If the mark of the actual vertice is less than the value we got from the priority queue, it means that the actual value...
+        # ... from the priority queue is not the smallest mark value, it happens because the value was inserted in the priority queue as...
+        # ... the smallest mark (and as the actual vertice mark) and later the mark was actualized because a smallest distance was found.
+        # In this case we do not need to try to find smallest marks using the actual vertice because it has already been done, using a...
+        # ... previous item from queue:
+        if(Mark[actualVertice] < minMarkPQ):
+            continue
 
-                    Mark[vertice] = Mark[actualVertice] + graph[actualVertice][vertice]
-                    Predecessor[vertice] = actualVertice
+        # (4.6) Trying to get new mark for each neighbor of the actual vertice:
+        for neighbor in graph[actualVertice]:
+            # (4.6.1) If the neighbor is already not in the Temporary Set it means that the smallest mark for this neighbor was already found:
+            if isNotTemp[neighbor]:
+                continue
+            # (4.6.2) If Mark[neighbor] > Mark[actualVertice] + graph[actualVertice][neighbor] then we need to actualize the mark for this...
+            # ... neighbor, actualize the neighbor's previous vertice and add to the priority queue the tuple (newDist, neighbor) because...
+            # ... newDist may be the new smallest mark: 
+            newDist = Mark[actualVertice] + graph[actualVertice][neighbor]
+            if newDist < Mark[neighbor]:
+                Mark[neighbor] = newDist
+                heappush(PriorityQueue, (newDist, neighbor))
+                Predecessor[neighbor] = actualVertice
 
-                    heappush(Mark_heap, (Mark[vertice], vertice))
-    
-        heapify(Mark_heap)       
-        minMark = heappop(Mark_heap)[1]
-                    
-        if minMark == INFINITE:
-           return [], -1
-        
-        actualVertice = minMark
+                
+    # (4.7) If the distance to end vertice still equals infinity, the end vertice is unreachable:
+    if Mark[end] == INFINITE:
+            return [], -1
 
-    # (10) Building the smallest path:
+    # (4.8) Building the smallest path:
     distance = Mark[end]
     path = [end]
     actualVertice = end
@@ -91,6 +107,6 @@ def dijkstra(start, end, graph):
 
 if __name__ == "__main__":
     graph = createEdgesDictionary()
-    path, distance = dijkstra('A', 'E', graph)
+    path, distance = dijkstra('A', 'D', graph)
     print(f"path = {path}")
     print(f"distance = {distance}")
