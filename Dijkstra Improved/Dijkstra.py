@@ -38,13 +38,13 @@ def dijkstra(start, end, graph):
     Predecessor = {}
     Temporary = set({})
 
-    # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice:
+    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:
     Mark[start] = 0
 
-    # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
+    # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
     Predecessor[start] = start
     
-    # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:
+    # (3) The Temporary Set of vertices:
     Temporary = set(graph.keys())
     Temporary.remove(start)
 
@@ -58,7 +58,6 @@ def dijkstra(start, end, graph):
 
         for vertice in Temporary:
             if vertice in graph[actualVertice]:
-                
                 if (vertice not in Mark) or (Mark[vertice] > Mark[actualVertice] + graph[actualVertice][vertice]):
 
                     Mark[vertice] = Mark[actualVertice] + graph[actualVertice][vertice]

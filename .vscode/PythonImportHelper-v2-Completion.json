@@ -104,7 +104,7 @@
         "kind": 2,
         "importPath": "Dijkstra Improved.Dijkstra",
         "description": "Dijkstra Improved.Dijkstra",
-        "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Predecessor = {}\n    Temporary = set({})\n    # (1) Marks[i] represent the known lowest distance between vertice i and the start vertice:\n    Mark[start] = 0\n    # (2) Pre[i] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Predecessor[start] = start\n    # (3) The value isTemp[i] tells if vi belongs to the Temporary Set of vertices:\n    Temporary = set(graph.keys())",
+        "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Predecessor = {}\n    Temporary = set({})\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:\n    Mark[start] = 0\n    # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Predecessor[start] = start\n    # (3) The Temporary Set of vertices:\n    Temporary = set(graph.keys())",
         "detail": "Dijkstra Improved.Dijkstra",
         "documentation": {}
     },
