@@ -36,18 +36,19 @@ def createEdgesDictionary():
 def dijkstra(start, end, graph):
     
     Mark = {}
+    Mark_heap = []
     Predecessor = {}
-    Temporary = set({})
 
     # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:
+    for vertex in graph.keys():
+        Mark[vertex] = INFINITE
     Mark[start] = 0
 
     # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:
     Predecessor[start] = start
     
     # (3) The Temporary Set of vertices:
-    Temporary = set(graph.keys())
-    Temporary.remove(start)
+    NotTemporary = set()
 
     # (4) The path always starts with the start vertice and because Mark[start][start] = 0, minMark = start:
     actualVertice = start
@@ -57,24 +58,24 @@ def dijkstra(start, end, graph):
     # ... happens when the vertice is removed from the Temporary Set:
     while(actualVertice != end): # O(|V(G)|²)
 
-        for vertice in Temporary:
-            if vertice in graph[actualVertice]:
+        NotTemporary.add(actualVertice)
+        
+        for vertice in graph[actualVertice]:
+            if vertice not in NotTemporary:
                 if (vertice not in Mark) or (Mark[vertice] > Mark[actualVertice] + graph[actualVertice][vertice]):
 
                     Mark[vertice] = Mark[actualVertice] + graph[actualVertice][vertice]
                     Predecessor[vertice] = actualVertice
-                
-                if minMark not in Temporary:
-                    minMark = vertice
-                elif Mark[minMark] > Mark[vertice]:
-                    minMark = vertice
-                         
 
-        if minMark == actualVertice:
+                    heappush(Mark_heap, (Mark[vertice], vertice))
+    
+        heapify(Mark_heap)       
+        minMark = heappop(Mark_heap)[1]
+                    
+        if minMark == INFINITE:
            return [], -1
         
         actualVertice = minMark
-        Temporary.remove(minMark)
 
     # (10) Building the smallest path:
     distance = Mark[end]

@@ -24,6 +24,22 @@
         "documentation": {}
     },
     {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "math",
         "description": "math",
@@ -53,6 +69,38 @@
         "description": "numpy",
         "isExtraImport": true,
         "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "Infinity",
+        "importPath": "numpy",
+        "description": "numpy",
+        "isExtraImport": true,
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "heapq",
+        "description": "heapq",
+        "isExtraImport": true,
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "heapq",
+        "description": "heapq",
+        "isExtraImport": true,
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "heapq",
+        "description": "heapq",
+        "isExtraImport": true,
+        "detail": "heapq",
         "documentation": {}
     },
     {
@@ -106,6 +154,42 @@
         "description": "Dijkstra Improved.Dijkstra",
         "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Predecessor = {}\n    Temporary = set({})\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:\n    Mark[start] = 0\n    # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Predecessor[start] = start\n    # (3) The Temporary Set of vertices:\n    Temporary = set(graph.keys())",
         "detail": "Dijkstra Improved.Dijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "createEdgesDictionary",
+        "kind": 2,
+        "importPath": "Dijkstra with Heap.Dijkstra",
+        "description": "Dijkstra with Heap.Dijkstra",
+        "peekOfCode": "def createEdgesDictionary():\n    # (1) Path of the file containing the graph edges with weights:\n    generalPath = \"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\Dijkstra Improved\"\n    # (2) Opening the file:\n    with open(generalPath + \"\\\\Graph.txt\") as file:\n        # (2.1) Getting a vector of strings with every row from the file:\n        rows = file.readlines()\n    # (3) Creating a dictionary to store de edges in the graph:\n    graph = {}\n    for i in range(0, len(rows)):",
+        "detail": "Dijkstra with Heap.Dijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "dijkstra",
+        "kind": 2,
+        "importPath": "Dijkstra with Heap.Dijkstra",
+        "description": "Dijkstra with Heap.Dijkstra",
+        "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Mark_heap = []\n    Predecessor = {}\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice:\n    for vertex in graph.keys():\n        Mark[vertex] = INFINITE\n    Mark[start] = 0\n    # (2) Predecessor[v] represents the predecessor vertice of vi in the smallest path between vertice i and the start vertice:\n    Predecessor[start] = start",
+        "detail": "Dijkstra with Heap.Dijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "Mark",
+        "kind": 5,
+        "importPath": "Dijkstra with Heap.Test",
+        "description": "Dijkstra with Heap.Test",
+        "peekOfCode": "Mark = {'A' : 4, 'B' : 2, 'C' : 4, 'D' : 5, 'E' : 6, 'F' : 7, 'G' : 8}\nmin_heap = []\nfor item in Mark.items():\n    heappush(min_heap, (item[1], item[0]))\nheapify(min_heap)\nprint(min_heap)\nprint(heappop(min_heap))\nprint(min_heap)",
+        "detail": "Dijkstra with Heap.Test",
+        "documentation": {}
+    },
+    {
+        "label": "min_heap",
+        "kind": 5,
+        "importPath": "Dijkstra with Heap.Test",
+        "description": "Dijkstra with Heap.Test",
+        "peekOfCode": "min_heap = []\nfor item in Mark.items():\n    heappush(min_heap, (item[1], item[0]))\nheapify(min_heap)\nprint(min_heap)\nprint(heappop(min_heap))\nprint(min_heap)",
+        "detail": "Dijkstra with Heap.Test",
         "documentation": {}
     },
     {
