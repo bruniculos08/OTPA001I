@@ -4,7 +4,7 @@ from asyncio.windows_events import INFINITE
 from math import *
 from heapq import *
 
-from numpy import Infinity
+#from numpy import Infinity
 
 def createEdgesDictionary():
     # (1) Path of the file containing the graph edges with weights:
@@ -76,9 +76,11 @@ def dijkstra(start, end, graph):
 
         # (4.6) Trying to get new mark for each neighbor of the actual vertice:
         for neighbor in graph[actualVertice]:
+            
             # (4.6.1) If the neighbor is already not in the Temporary Set it means that the smallest mark for this neighbor was already found:
             if isNotTemp[neighbor]:
                 continue
+
             # (4.6.2) If Mark[neighbor] > Mark[actualVertice] + graph[actualVertice][neighbor] then we need to actualize the mark for this...
             # ... neighbor, actualize the neighbor's previous vertice and add to the priority queue the tuple (newDist, neighbor) because...
             # ... newDist may be the new smallest mark: 
@@ -107,6 +109,6 @@ def dijkstra(start, end, graph):
 
 if __name__ == "__main__":
     graph = createEdgesDictionary()
-    path, distance = dijkstra('A', 'D', graph)
-    print(f"path = {path}")
-    print(f"distance = {distance}")
+    path, distance = dijkstra('A', 'E', graph)
+    print(f"caminho = {path}")
+    print(f"distância = {distance}")
