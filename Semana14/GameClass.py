@@ -7,3 +7,4 @@ class Game():
         pass
 
     def loadEntities(self):
+        pass

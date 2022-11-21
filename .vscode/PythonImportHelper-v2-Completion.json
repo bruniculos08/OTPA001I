@@ -676,7 +676,7 @@
         "kind": 6,
         "importPath": "Semana14.GameClass",
         "description": "Semana14.GameClass",
-        "peekOfCode": "class Game():\n    def init(self):\n        pass\n    def loadEntities(self):",
+        "peekOfCode": "class Game():\n    def init(self):\n        pass\n    def loadEntities(self):\n        pass",
         "detail": "Semana14.GameClass",
         "documentation": {}
     }
