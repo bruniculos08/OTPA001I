@@ -519,6 +519,33 @@
         "documentation": {}
     },
     {
+        "label": "my_font1",
+        "kind": 5,
+        "importPath": "Semana14.Game",
+        "description": "Semana14.Game",
+        "peekOfCode": "my_font1 = pygame.font.SysFont('Comic Sans MS', 16)\nmy_font2 = pygame.font.SysFont('Comic Sans MS', 30)\nscore = 0\nsize = width, height = 1000, 800\nball_speed = [1, 1]\nblack = 0, 0, 0\nwhite = 255, 255, 255\nscreen = pygame.display.set_mode(size)\n# importando imagem da \"bola\":\nball = pygame.image.load(\"Semana14/koopa_shell.png\")",
+        "detail": "Semana14.Game",
+        "documentation": {}
+    },
+    {
+        "label": "my_font2",
+        "kind": 5,
+        "importPath": "Semana14.Game",
+        "description": "Semana14.Game",
+        "peekOfCode": "my_font2 = pygame.font.SysFont('Comic Sans MS', 30)\nscore = 0\nsize = width, height = 1000, 800\nball_speed = [1, 1]\nblack = 0, 0, 0\nwhite = 255, 255, 255\nscreen = pygame.display.set_mode(size)\n# importando imagem da \"bola\":\nball = pygame.image.load(\"Semana14/koopa_shell.png\")\n# Mudando a dimensão da imagem da \"bola\":",
+        "detail": "Semana14.Game",
+        "documentation": {}
+    },
+    {
+        "label": "score",
+        "kind": 5,
+        "importPath": "Semana14.Game",
+        "description": "Semana14.Game",
+        "peekOfCode": "score = 0\nsize = width, height = 1000, 800\nball_speed = [1, 1]\nblack = 0, 0, 0\nwhite = 255, 255, 255\nscreen = pygame.display.set_mode(size)\n# importando imagem da \"bola\":\nball = pygame.image.load(\"Semana14/koopa_shell.png\")\n# Mudando a dimensão da imagem da \"bola\":\nball = pygame.transform.scale(ball, (100, 100))",
+        "detail": "Semana14.Game",
+        "documentation": {}
+    },
+    {
         "label": "size",
         "kind": 5,
         "importPath": "Semana14.Game",
@@ -568,7 +595,7 @@
         "kind": 5,
         "importPath": "Semana14.Game",
         "description": "Semana14.Game",
-        "peekOfCode": "ball = pygame.image.load(\"Semana14/koopa_shell.png\")\n# Mudando a dimensão da imagem da \"bola\":\nball = pygame.transform.scale(ball, (100, 100))\n# Criando o retângo \"físico\" ao redor da imagem:\nballrect = ball.get_rect()\n# Criando o bloco retangular para o jogo:\nblock_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\nblock_rect.fill('grey')\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):",
+        "peekOfCode": "ball = pygame.image.load(\"Semana14/koopa_shell.png\")\n# Mudando a dimensão da imagem da \"bola\":\nball = pygame.transform.scale(ball, (100, 100))\n# Criando o retângo \"físico\" ao redor da imagem:\nballrect = ball.get_rect()\n# Criando o bloco retangular para o jogo:\nblock_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1",
         "detail": "Semana14.Game",
         "documentation": {}
     },
@@ -577,7 +604,7 @@
         "kind": 5,
         "importPath": "Semana14.Game",
         "description": "Semana14.Game",
-        "peekOfCode": "ball = pygame.transform.scale(ball, (100, 100))\n# Criando o retângo \"físico\" ao redor da imagem:\nballrect = ball.get_rect()\n# Criando o bloco retangular para o jogo:\nblock_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\nblock_rect.fill('grey')\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:",
+        "peekOfCode": "ball = pygame.transform.scale(ball, (100, 100))\n# Criando o retângo \"físico\" ao redor da imagem:\nballrect = ball.get_rect()\n# Criando o bloco retangular para o jogo:\nblock_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False",
         "detail": "Semana14.Game",
         "documentation": {}
     },
@@ -586,7 +613,7 @@
         "kind": 5,
         "importPath": "Semana14.Game",
         "description": "Semana14.Game",
-        "peekOfCode": "ballrect = ball.get_rect()\n# Criando o bloco retangular para o jogo:\nblock_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\nblock_rect.fill('grey')\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False\nkeyRight = False",
+        "peekOfCode": "ballrect = ball.get_rect()\n# Criando o bloco retangular para o jogo:\nblock_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False\nkeyRight = False\n# Flag para manter ou fechar o jogo:",
         "detail": "Semana14.Game",
         "documentation": {}
     },
@@ -595,7 +622,7 @@
         "kind": 5,
         "importPath": "Semana14.Game",
         "description": "Semana14.Game",
-        "peekOfCode": "block_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\nblock_rect.fill('grey')\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False\nkeyRight = False\n# Flag para manter ou fechar o jogo:\nRun = True",
+        "peekOfCode": "block_size = (int(width/6), 40)\nblock_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False\nkeyRight = False\n# Flag para manter ou fechar o jogo:\nRun = True\nwhile Run:",
         "detail": "Semana14.Game",
         "documentation": {}
     },
@@ -604,7 +631,7 @@
         "kind": 5,
         "importPath": "Semana14.Game",
         "description": "Semana14.Game",
-        "peekOfCode": "block_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\nblock_rect.fill('grey')\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False\nkeyRight = False\n# Flag para manter ou fechar o jogo:\nRun = True\nwhile Run:",
+        "peekOfCode": "block_rect = pygame.Rect(int(width/2 - block_size[0]/2), height-200, block_size[0],block_size[1])\n# Setando velocidade do bloco (lembrando que o vetor de velocidade desse é apenas sobre o eixo x, ou seja, é unidimensional):\nblock_speed = 1\n# Flags para os botões a serem utilizados:\nkeyLeft = False\nkeyRight = False\n# Flag para manter ou fechar o jogo:\nRun = True\nwhile Run:\n    for event in pygame.event.get():",
         "detail": "Semana14.Game",
         "documentation": {}
     },
@@ -642,6 +669,15 @@
         "description": "Semana14.Game",
         "peekOfCode": "Run = True\nwhile Run:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            sys.exit()\n        # Senão, se uma tecla esta pressionada(keydown):\n        elif event.type == pygame.KEYDOWN:\n            # Se esta tecla é a seta para a esquerda:\n            if event.key == pygame.K_LEFT:\n                # seta para a esquerda ativada:",
         "detail": "Semana14.Game",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "kind": 6,
+        "importPath": "Semana14.GameClass",
+        "description": "Semana14.GameClass",
+        "peekOfCode": "class Game():\n    def init(self):\n        pass\n    def loadEntities(self):",
+        "detail": "Semana14.GameClass",
         "documentation": {}
     }
 ]
