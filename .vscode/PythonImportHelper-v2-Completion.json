@@ -56,6 +56,23 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
         "label": "Infinity",
         "importPath": "numpy",
         "description": "numpy",
@@ -85,6 +102,24 @@
         "description": "heapq",
         "isExtraImport": true,
         "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
         "documentation": {}
     },
     {
@@ -119,6 +154,14 @@
         "isExtraImport": true,
         "importPath": "pygame",
         "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "gfxdraw",
+        "importPath": "pygame",
+        "description": "pygame",
+        "isExtraImport": true,
         "detail": "pygame",
         "documentation": {}
     },
@@ -174,6 +217,33 @@
         "description": "Dijkstra with Heap.Dijkstra",
         "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Predecessor = {}\n    isNotTemp = {}\n    PriorityQueue = []\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice and...\n    # ...isNotTemp[v] tells if the vertice has a permanent mark:\n    for vertice in graph.keys():\n        Mark[vertice] = INFINITE\n        isNotTemp[vertice] = False",
         "detail": "Dijkstra with Heap.Dijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "kMeans",
+        "kind": 2,
+        "importPath": "k-Means.kMeans",
+        "description": "k-Means.kMeans",
+        "peekOfCode": "def kMeans(k, X, Y, iterations=1):\n    data = list(zip(X, Y))\n    centroids = [(random.uniform(min(X), max(X)), random.uniform(min(Y), max(Y))) for _ in range(k)]\n    for _ in range(iterations):\n        new_centroids = centroids\n        centroids, data_group_list = calcMeans(data, centroids)\n    return new_centroids, data_group_list\ndef calcMeans(data, centroids):\n    data_group_list = [[] for _ in range(len(centroids))]\n    for point in data:",
+        "detail": "k-Means.kMeans",
+        "documentation": {}
+    },
+    {
+        "label": "calcMeans",
+        "kind": 2,
+        "importPath": "k-Means.kMeans",
+        "description": "k-Means.kMeans",
+        "peekOfCode": "def calcMeans(data, centroids):\n    data_group_list = [[] for _ in range(len(centroids))]\n    for point in data:\n        dist, centroid_index = -1, -1\n        for i, centroid in enumerate(centroids):\n            if dist == -1 or dist > calcDist(point, centroid):\n                dist = calcDist(point, centroid)\n                centroid_index = i\n        data_group_list[centroid_index].append(point)\n    new_centroids = []",
+        "detail": "k-Means.kMeans",
+        "documentation": {}
+    },
+    {
+        "label": "calcDist",
+        "kind": 2,
+        "importPath": "k-Means.kMeans",
+        "description": "k-Means.kMeans",
+        "peekOfCode": "def calcDist(p0, p1) -> float:\n    return abs(sqrt((p0[0] - p1[0])**2 + (p0[1] - p1[1])**2))\nif __name__ == \"__main__\":\n    X = [random.uniform(1, 10) for _ in range(500)]\n    Y = [random.uniform(1, 10) for _ in range(500)]\n    centroids, data_group_list = kMeans(4, X, Y, 4)\n    for i, (x_c, y_c) in enumerate(centroids):\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(x_c, y_c, color = hexadecimal, marker='s')\n        for (x, y) in data_group_list[i]:",
+        "detail": "k-Means.kMeans",
         "documentation": {}
     },
     {
@@ -676,8 +746,62 @@
         "kind": 6,
         "importPath": "Semana14.GameClass",
         "description": "Semana14.GameClass",
-        "peekOfCode": "class Game():\n    def init(self):\n        pass\n    def loadEntities(self):\n        pass",
+        "peekOfCode": "class Game():\n    state = None\n    STATE_QUIT = 0\n    STATE_MAINGAME = 1\n    STATE_RESET = 2\n    STATE_GAMEOVER = 3\n    def __init__(self):\n        pygame.init()\n        pygame.font.init()\n        pygame.mixer.init()",
         "detail": "Semana14.GameClass",
+        "documentation": {}
+    },
+    {
+        "label": "Fire",
+        "kind": 6,
+        "importPath": "Semana15.game",
+        "description": "Semana15.game",
+        "peekOfCode": "class Fire:\n    STEPS_BETWEEN_COLORS = 15\n    COLORS = ['black', 'red', 'orange', 'yellow', 'white']\n    PIXEL_SIZE = 5\n    def __init__(self, game):\n        self.game = game\n        self.fire_width = self.game.width // self.PIXEL_SIZE\n        self.fire_height = self.game.height // self.PIXEL_SIZE\n        self.palette = self.get_palette()\n        self.fire_array = self.get_fire_array()",
+        "detail": "Semana15.game",
+        "documentation": {}
+    },
+    {
+        "label": "BaseMovable",
+        "kind": 6,
+        "importPath": "Semana15.game",
+        "description": "Semana15.game",
+        "peekOfCode": "class BaseMovable:\n    def __init__(self, game, speed=0.2):\n        self.game = game\n        self.speed = speed\n        self.w = self.game.width/6\n        self.h = self.game.height/6\n        self.x = self.game.width/2 - self.w/2\n        self.y = self.game.height/2 - self.h/2\n    def set_speed(self, speed):\n        self.speed = speed",
+        "detail": "Semana15.game",
+        "documentation": {}
+    },
+    {
+        "label": "Puck",
+        "kind": 6,
+        "importPath": "Semana15.game",
+        "description": "Semana15.game",
+        "peekOfCode": "class Puck(BaseMovable):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.reset()\n    def reset(self):\n        self.x = int(self.game.width/2 - self.game.width/6)\n        self.y = self.game.height-200\n        self.w = self.game.width/6\n        self.h = 40\n    def move_left(self, dt):",
+        "detail": "Semana15.game",
+        "documentation": {}
+    },
+    {
+        "label": "Ball",
+        "kind": 6,
+        "importPath": "Semana15.game",
+        "description": "Semana15.game",
+        "peekOfCode": "class Ball(BaseMovable):\n    COLLIDE_NONE = 0\n    COLLIDE_PUCK = 1\n    COLLIDE_BOTTOM = 2\n    def __init__(self, image, *args, **kwargs):\n        self.image = pygame.image.load(image)\n        super().__init__(*args, **kwargs)\n        self.reset()\n    def reset(self):\n        rect = self.image.get_rect()",
+        "detail": "Semana15.game",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "kind": 6,
+        "importPath": "Semana15.game",
+        "description": "Semana15.game",
+        "peekOfCode": "class Game:\n    WHITE = 255, 255, 255\n    RED = 255, 0, 0\n    GREEN = 0, 255, 0\n    BLUE = 0, 0, 255\n    YELLOW = 255, 255, 0\n    MAGENTA = 255, 0, 255\n    CYAN = 0, 255, 255\n    BLACK = 0, 0, 0\n    STATE_QUIT = 0",
+        "detail": "Semana15.game",
+        "documentation": {}
+    },
+    {
+        "label": "game",
+        "kind": 5,
+        "importPath": "Semana15.game",
+        "description": "Semana15.game",
+        "peekOfCode": "game = Game()\ngame.run()",
+        "detail": "Semana15.game",
         "documentation": {}
     }
 ]
