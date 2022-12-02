@@ -275,7 +275,7 @@
         "kind": 2,
         "importPath": "k-Means.kMeans",
         "description": "k-Means.kMeans",
-        "peekOfCode": "def kMeans(k, data, iterations=1):\n    unziped_data = list(zip(*data))\n    centroids = [(random.uniform(min(unziped_data[0]), max(unziped_data[0])), random.uniform(min(unziped_data[1]), max(unziped_data[1]))) for _ in range(k)]\n    for _ in range(iterations):\n        new_centroids = centroids\n        centroids, data_group_list = calcMeans(data, centroids)\n    return new_centroids, data_group_list\ndef calcMeans(data, centroids):\n    data_group_list = [[] for _ in range(len(centroids))]\n    for point in data:",
+        "peekOfCode": "def kMeans(k, data, iterations=1):\n    # Unzip a list of tuples returns other list of tuples where each element is a tuple with the values of the corresponding...\n    # ... index of the tuples in the previus list:\n    unziped_data = list(zip(*data))\n    # Create random points to be the centroids:\n    centroids = [(random.uniform(min(unziped_data[0]), max(unziped_data[0])), random.uniform(min(unziped_data[1]), max(unziped_data[1]))) for _ in range(k)]\n    # Do each interaction to calculate the groups and new centroids:\n    for _ in range(iterations):\n        new_centroids = centroids\n        centroids, data_group_list = calcMeans(data, centroids)",
         "detail": "k-Means.kMeans",
         "documentation": {}
     },
@@ -284,7 +284,7 @@
         "kind": 2,
         "importPath": "k-Means.kMeans",
         "description": "k-Means.kMeans",
-        "peekOfCode": "def calcMeans(data, centroids):\n    data_group_list = [[] for _ in range(len(centroids))]\n    for point in data:\n        dist, centroid_index = -1, -1\n        for i, centroid in enumerate(centroids):\n            if dist == -1 or dist > calcDist(point, centroid):\n                dist = calcDist(point, centroid)\n                centroid_index = i\n        data_group_list[centroid_index].append(point)\n    new_centroids = []",
+        "peekOfCode": "def calcMeans(data, centroids):\n    # The amount of group is equal the amount of centroids: \n    data_group_list = [[] for _ in range(len(centroids))]\n    # Associating each point in a group:\n    for point in data:\n        dist, centroid_index = -1, -1\n        for i, centroid in enumerate(centroids):\n            if dist == -1 or dist > calcDist(point, centroid):\n                dist = calcDist(point, centroid)\n                centroid_index = i",
         "detail": "k-Means.kMeans",
         "documentation": {}
     },

@@ -64,24 +64,22 @@ if __name__ == "__main__":
     for i, (x_c, y_c) in enumerate(centroids):
         hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
         plt.scatter(x_c, y_c, c = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        for (x, y) in data_group_list[i]:
-            plt.scatter(x, y, color = hexadecimal)
+        X, Y = zip(*data_group_list[i])
+        plt.scatter(X, Y, color = hexadecimal)
     plt.savefig("C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\Exemplo01 (k-Means).png")
     plt.close()
 
     #Exemple02 (3d plot):
     X = [random.uniform(1, 200) for _ in range(200)]
-    Y = [random.uniform(1, 200) for _ in range(200)]
-    Z = [random.uniform(1, 200) for _ in range(200)]
+    Y = [random.uniform(1, 250) for _ in range(200)]
+    Z = [random.uniform(1, 500) for _ in range(200)]
     data = list(zip(X, Y, Z))
 
     centroids, data_group_list = kMeans(4, data, 1)
-    
     ax = plt.axes(projection = '3d')
     for i, (x_c, y_c, z_c) in enumerate(centroids):
         hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
         ax.scatter3D(x_c, y_c, z_c, color = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        # print(data_group_list[i])
         X, Y, Z = (zip(*data_group_list[i]))
         ax.scatter3D(X, Y, Z, color = hexadecimal)
     plt.savefig("C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\Exemplo02 (k-Means).png")
