@@ -77,11 +77,12 @@ if __name__ == "__main__":
 
     centroids, data_group_list = kMeans(4, data, 1)
     
+    ax = plt.axes(projection = '3d')
     for i, (x_c, y_c, z_c) in enumerate(centroids):
         hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
-        ax = plt.axes(projection = '3d')
         ax.scatter3D(x_c, y_c, z_c, color = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        for (x, y, z) in data_group_list[i]:
-            ax.scatter3D(x, y, z, color = hexadecimal)
+        # print(data_group_list[i])
+        X, Y, Z = (zip(*data_group_list[i]))
+        ax.scatter3D(X, Y, Z, color = hexadecimal)
     plt.savefig("C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\Exemplo02 (k-Means).png")
     plt.close()
