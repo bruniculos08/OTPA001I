@@ -266,7 +266,25 @@
         "kind": 2,
         "importPath": "k-Means.kMeans (N dimensions)",
         "description": "k-Means.kMeans (N dimensions)",
-        "peekOfCode": "def calcDist(p0, p1) -> float:\n    sum = 0\n    for i in range(0, len(p0)):\n        sum += (p0[i] - p1[i])**2\n    return sum\nif __name__ == \"__main__\":\n    # Exemple01 (2d plot):\n    X = [random.uniform(1, 200) for _ in range(200)]\n    Y = [random.uniform(1, 200) for _ in range(200)]\n    data = list(zip(X, Y))",
+        "peekOfCode": "def calcDist(p0, p1) -> float:\n    sum = 0\n    for i in range(0, len(p0)):\n        sum += (p0[i] - p1[i])**2\n    return sum\ndef PlotkMeans(centroids, data_group_list, file_name):\n    for i, point in enumerate(centroids):\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n        for point_list in data_group_list[i]:",
+        "detail": "k-Means.kMeans (N dimensions)",
+        "documentation": {}
+    },
+    {
+        "label": "PlotkMeans",
+        "kind": 2,
+        "importPath": "k-Means.kMeans (N dimensions)",
+        "description": "k-Means.kMeans (N dimensions)",
+        "peekOfCode": "def PlotkMeans(centroids, data_group_list, file_name):\n    for i, point in enumerate(centroids):\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n        for point_list in data_group_list[i]:\n            plt.scatter(*zip(*[point_list]), color = hexadecimal)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\k-Means\\\\{file_name}.png\")\n    plt.close()\ndef PlotkMeans3D(centroids, data_group_list, file_name):\n    ax = plt.axes(projection = '3d')",
+        "detail": "k-Means.kMeans (N dimensions)",
+        "documentation": {}
+    },
+    {
+        "label": "PlotkMeans3D",
+        "kind": 2,
+        "importPath": "k-Means.kMeans (N dimensions)",
+        "description": "k-Means.kMeans (N dimensions)",
+        "peekOfCode": "def PlotkMeans3D(centroids, data_group_list, file_name):\n    ax = plt.axes(projection = '3d')\n    for i, point in enumerate(centroids):\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        ax.scatter3D(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n        for point_data in data_group_list[i]:\n            ax.scatter3D(*zip(*[point_data]), color = hexadecimal)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\k-Means\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":",
         "detail": "k-Means.kMeans (N dimensions)",
         "documentation": {}
     },
@@ -293,7 +311,16 @@
         "kind": 2,
         "importPath": "k-Means.kMeans",
         "description": "k-Means.kMeans",
-        "peekOfCode": "def calcDist(p0, p1) -> float:\n    sum = 0\n    for i in range(0, len(p0)):\n        sum += (p0[i] - p1[i])**2\n    return sum\nif __name__ == \"__main__\":\n    # Exemple01 (2d plot):\n    X = [random.uniform(1, 200) for _ in range(200)]\n    Y = [random.uniform(1, 200) for _ in range(200)]\n    data = list(zip(X, Y))",
+        "peekOfCode": "def calcDist(p0, p1) -> float:\n    sum = 0\n    for i in range(0, len(p0)):\n        sum += (p0[i] - p1[i])**2\n    return sum\ndef PlotkMeans(centroids, data_group_list, file_name):\n    for i, point in enumerate(centroids):\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n        for point_data in data_group_list[i]:",
+        "detail": "k-Means.kMeans",
+        "documentation": {}
+    },
+    {
+        "label": "PlotkMeans",
+        "kind": 2,
+        "importPath": "k-Means.kMeans",
+        "description": "k-Means.kMeans",
+        "peekOfCode": "def PlotkMeans(centroids, data_group_list, file_name):\n    for i, point in enumerate(centroids):\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n        for point_data in data_group_list[i]:\n            plt.scatter(*zip(*[point_data]), color = hexadecimal)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\k-Means\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    # Exemple01 (2d plot):",
         "detail": "k-Means.kMeans",
         "documentation": {}
     },

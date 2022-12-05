@@ -44,17 +44,30 @@ def calcMeans(data, centroids):
                 new_x += point[0]/len(group)
                 new_y += point[1]/len(group)
             new_centroids.append((new_x, new_y))
-        # If the group has no elements then the group centroid doesn't change:
+        # If the group has no elements then the group old centroid must be...
+        # ... deleted:
         else:
-            new_centroids.append(centroids[i])
+            data_group_list = data_group_list[:i] + data_group_list[i+1:]
 
     return new_centroids, data_group_list
 
+# This function calculates the distance squared between two points and these points can have...
+# ... wherever dimension:
 def calcDist(p0, p1) -> float:
     sum = 0
     for i in range(0, len(p0)):
         sum += (p0[i] - p1[i])**2
     return sum
+
+def PlotkMeans(centroids, data_group_list, file_name):
+    for i, point in enumerate(centroids):
+        hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
+        plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)
+        for point_data in data_group_list[i]:
+            plt.scatter(*zip(*[point_data]), color = hexadecimal)
+    plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\{file_name}.png")
+    plt.close()
+
 
 if __name__ == "__main__":
 
@@ -64,11 +77,4 @@ if __name__ == "__main__":
     data = list(zip(X, Y))
 
     centroids, data_group_list = kMeans(8, data, 1)
-    
-    for i, (x_c, y_c) in enumerate(centroids):
-        hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
-        plt.scatter(x_c, y_c, c = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        for (x, y) in data_group_list[i]:
-            plt.scatter(x, y, color = hexadecimal)
-    plt.savefig("C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\Exemplo01 (k-Means).png")
-    plt.close()
+    PlotkMeans(centroids, data_group_list, "Exemplo01 (k-Means)")

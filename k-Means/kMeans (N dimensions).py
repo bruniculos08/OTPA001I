@@ -52,6 +52,26 @@ def calcDist(p0, p1) -> float:
         sum += (p0[i] - p1[i])**2
     return sum
 
+def PlotkMeans(centroids, data_group_list, file_name):
+    for i, point in enumerate(centroids):
+        hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
+        plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)
+        for point_list in data_group_list[i]:
+            plt.scatter(*zip(*[point_list]), color = hexadecimal)
+    plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\{file_name}.png")
+    plt.close()
+
+def PlotkMeans3D(centroids, data_group_list, file_name):
+    ax = plt.axes(projection = '3d')
+    for i, point in enumerate(centroids):
+        hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
+        ax.scatter3D(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)
+        for point_data in data_group_list[i]:
+            ax.scatter3D(*zip(*[point_data]), color = hexadecimal)
+    plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\{file_name}.png")
+    plt.close()
+
+
 if __name__ == "__main__":
 
     # Exemple01 (2d plot):
@@ -60,14 +80,7 @@ if __name__ == "__main__":
     data = list(zip(X, Y))
 
     centroids, data_group_list = kMeans(8, data, 1)
-    
-    for i, (x_c, y_c) in enumerate(centroids):
-        hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
-        plt.scatter(x_c, y_c, c = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        X, Y = zip(*data_group_list[i])
-        plt.scatter(X, Y, color = hexadecimal)
-    plt.savefig("C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\Exemplo01 (k-Means).png")
-    plt.close()
+    PlotkMeans(centroids, data_group_list, "Exemplo01 (k-Means)")
 
     #Exemple02 (3d plot):
     X = [random.uniform(1, 200) for _ in range(200)]
@@ -76,11 +89,4 @@ if __name__ == "__main__":
     data = list(zip(X, Y, Z))
 
     centroids, data_group_list = kMeans(4, data, 1)
-    ax = plt.axes(projection = '3d')
-    for i, (x_c, y_c, z_c) in enumerate(centroids):
-        hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
-        ax.scatter3D(x_c, y_c, z_c, color = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        X, Y, Z = (zip(*data_group_list[i]))
-        ax.scatter3D(X, Y, Z, color = hexadecimal)
-    plt.savefig("C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\Exemplo02 (k-Means).png")
-    plt.close()
+    PlotkMeans3D(centroids, data_group_list, "Exemplo02 (k-Means)")
