@@ -8,6 +8,14 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -32,6 +40,40 @@
         "importPath": "matplotlib.pyplot",
         "description": "matplotlib.pyplot",
         "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "make_blobs",
+        "importPath": "sklearn.datasets",
+        "description": "sklearn.datasets",
+        "isExtraImport": true,
+        "detail": "sklearn.datasets",
+        "documentation": {}
+    },
+    {
+        "label": "DBSCAN",
+        "importPath": "sklearn.cluster",
+        "description": "sklearn.cluster",
+        "isExtraImport": true,
+        "detail": "sklearn.cluster",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "DB_Scan",
+        "kind": 6,
+        "importPath": "DB-Scan (Class)",
+        "description": "DB-Scan (Class)",
+        "peekOfCode": "class DB_Scan():\n    def __init__(self, data, radius, minimum_cluster):\n        self.data = data\n        self.radius = radius\n        self.minimum_cluster = minimum_cluster\n        # Mark if the point was already:\n        self.data_mark = {}\n        for point in self.data:\n            # No point has been selected yet:\n            self.data_mark[point] = {'Selected' : False}",
+        "detail": "DB-Scan (Class)",
         "documentation": {}
     },
     {
@@ -66,7 +108,7 @@
         "kind": 2,
         "importPath": "DB-Scan",
         "description": "DB-Scan",
-        "peekOfCode": "def PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]\n    radius = 20\n    # X_circle_1 = np.linspace(-1, 1, 50)",
+        "peekOfCode": "def PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    # data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]\n    # radius = 20\n    X_circle_1 = np.linspace(-1, 1, 50)",
         "detail": "DB-Scan",
         "documentation": {}
     }

@@ -83,17 +83,17 @@ def PlotdbScan(data_groups, file_name):
     plt.close()
 
 if __name__ == "__main__":
-    data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]
-    radius = 20
+    # data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]
+    # radius = 20
 
-    # X_circle_1 = np.linspace(-1, 1, 50)
-    # Y_circle_1 = [sqrt(1 - x**2) for x in X_circle_1]
-    # X_circle_2 = np.linspace(-2, 2, 50)
-    # Y_circle_2 = [sqrt(4 - x**2) for x in X_circle_2]
-    # X_circle_3 = np.linspace(-2, 2, 50)
-    # Y_circle_3 = [sqrt(4.1 - x**2) for x in X_circle_3]
-    # data = list(zip(X_circle_1, Y_circle_1)) + list(zip(X_circle_2, Y_circle_2)) + list(zip(X_circle_3, Y_circle_3))
-    # radius = 0.9999999
+    X_circle_1 = np.linspace(-1, 1, 50)
+    Y_circle_1 = [sqrt(1 - x**2) for x in X_circle_1]
+    X_circle_2 = np.linspace(-2, 2, 50)
+    Y_circle_2 = [sqrt(4 - x**2) for x in X_circle_2]
+    X_circle_3 = np.linspace(-2, 2, 50)
+    Y_circle_3 = [sqrt(4.1 - x**2) for x in X_circle_3]
+    data = list(zip(X_circle_1, Y_circle_1)) + list(zip(X_circle_2, Y_circle_2)) + list(zip(X_circle_3, Y_circle_3))
+    radius = 0.9999999
 
     data_groups = dbScan(data, radius)
     PlotdbScan(data_groups, 'Exemplo01 (DB-Scan)')
