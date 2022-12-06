@@ -66,7 +66,7 @@
         "kind": 2,
         "importPath": "DB-Scan",
         "description": "DB-Scan",
-        "peekOfCode": "def PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    # data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]\n    # radius = 20\n    X_circle_1 = np.linspace(-1, 1, 50)",
+        "peekOfCode": "def PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]\n    radius = 20\n    # X_circle_1 = np.linspace(-1, 1, 50)",
         "detail": "DB-Scan",
         "documentation": {}
     }

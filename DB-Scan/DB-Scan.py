@@ -18,9 +18,13 @@ def dbScan(data, radius, minimum_cluster = 4):
         if data_mark[point]['Selected'] == True:
             continue
         else:
+            # The actual point is now selected:
             data_mark[point]['Selected'] = True
+            # Create a group using the actual point selected and his neighbors:
             group = [point] + dbScanBuild(point, data, data_mark, radius, minimum_cluster)
+            # Append the group to the list of groups:
             data_groups.append(group)
+            # Set all the points in the group as selected:
             for point_group in group:
                 data_mark[point_group]['Selected'] = True
     return data_groups
@@ -42,7 +46,8 @@ def dbScanBuild(actual_point, data, data_mark, radius, minimum_cluster):
             # The maybe has been already selected, but in both cases he is counted as a neighbor:
             num_neighbors += 1
     
-    # If the actual point has no neighbors (he is alone) then he has will return no list with only him self or...
+    # If the actual point has no neighbors (he is alone) then he will return no list (because a list containing only him self...
+    # ... was already added to the list of groups in the call of dbScanBuild()), or...
     # ... if the actual point has neighbors but they have already been selected then this point was already been returned in...
     # ... in the next step of other call of this function (with some of his neighbors):
     if num_neighbors < minimum_cluster or neighbors == []:
@@ -78,20 +83,17 @@ def PlotdbScan(data_groups, file_name):
     plt.close()
 
 if __name__ == "__main__":
-    # data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]
-    # radius = 20
+    data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]
+    radius = 20
 
-    X_circle_1 = np.linspace(-1, 1, 50)
-    Y_circle_1 = [sqrt(1 - x**2) for x in X_circle_1]
-    X_circle_2 = np.linspace(-2, 2, 50)
-    Y_circle_2 = [sqrt(4 - x**2) for x in X_circle_2]
-    X_circle_3 = np.linspace(-2, 2, 50)
-    Y_circle_3 = [sqrt(4.1 - x**2) for x in X_circle_3]
-    data = list(zip(X_circle_1, Y_circle_1)) + list(zip(X_circle_2, Y_circle_2)) + list(zip(X_circle_3, Y_circle_3))
-    radius = 0.9999999
+    # X_circle_1 = np.linspace(-1, 1, 50)
+    # Y_circle_1 = [sqrt(1 - x**2) for x in X_circle_1]
+    # X_circle_2 = np.linspace(-2, 2, 50)
+    # Y_circle_2 = [sqrt(4 - x**2) for x in X_circle_2]
+    # X_circle_3 = np.linspace(-2, 2, 50)
+    # Y_circle_3 = [sqrt(4.1 - x**2) for x in X_circle_3]
+    # data = list(zip(X_circle_1, Y_circle_1)) + list(zip(X_circle_2, Y_circle_2)) + list(zip(X_circle_3, Y_circle_3))
+    # radius = 0.9999999
 
     data_groups = dbScan(data, radius)
-    # print(data_groups)
-    # For some reason the point (-1.0, 0.0), (-1.0, 0.0) is counted two times
-    print(data_groups[0])
     PlotdbScan(data_groups, 'Exemplo01 (DB-Scan)')
