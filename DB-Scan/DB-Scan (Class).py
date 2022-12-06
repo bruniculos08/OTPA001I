@@ -9,17 +9,20 @@ import seaborn as sns
 
 class DB_Scan():
 
-    def __init__(self, data, radius, minimum_cluster):
+    def __init__(self):
+        pass
+
+    def dbScan(self, data, radius, minimum_cluster):
         self.data = data
         self.radius = radius
         self.minimum_cluster = minimum_cluster
+
         # Mark if the point was already:
         self.data_mark = {}
         for point in self.data:
             # No point has been selected yet:
             self.data_mark[point] = {'Selected' : False}
 
-    def dbScan(self):
         # Start the groups creation:
         self.data_groups = []
         for point in self.data:
@@ -99,17 +102,17 @@ if __name__ == "__main__":
     # radius = 8
     # minimum_cluster = 4
 
-    X_circle_1 = np.linspace(-1, 1, 50)
+    X_circle_1 = np.linspace(-1, 1, 200)
     Y_circle_1 = [sqrt(1 - x**2) for x in X_circle_1]
-    X_circle_2 = np.linspace(-2, 2, 50)
+    X_circle_2 = np.linspace(-2, 2, 200)
     Y_circle_2 = [sqrt(4 - x**2) for x in X_circle_2]
-    X_circle_3 = np.linspace(-2, 2, 50)
-    Y_circle_3 = [sqrt(4.1 - x**2) for x in X_circle_3]
+    X_circle_3 = np.linspace(-2, 2, 200)
+    Y_circle_3 = [sqrt(4.5 - x**2) for x in X_circle_3]
     data = list(zip(X_circle_1, Y_circle_1)) + list(zip(X_circle_2, Y_circle_2)) + list(zip(X_circle_3, Y_circle_3))
-    radius = 0.9999999
+    radius = 0.5
     minimum_cluster = 4
 
-    scan = DB_Scan(data, radius, minimum_cluster)
+    scan = DB_Scan()
 
-    scan.dbScan()
+    scan.dbScan(data, radius, minimum_cluster)
     scan.PlotdbScan('Exemplo01 (DB-Scan)')

@@ -72,7 +72,7 @@
         "kind": 6,
         "importPath": "DB-Scan (Class)",
         "description": "DB-Scan (Class)",
-        "peekOfCode": "class DB_Scan():\n    def __init__(self, data, radius, minimum_cluster):\n        self.data = data\n        self.radius = radius\n        self.minimum_cluster = minimum_cluster\n        # Mark if the point was already:\n        self.data_mark = {}\n        for point in self.data:\n            # No point has been selected yet:\n            self.data_mark[point] = {'Selected' : False}",
+        "peekOfCode": "class DB_Scan():\n    def __init__(self):\n        pass\n    def dbScan(self, data, radius, minimum_cluster):\n        self.data = data\n        self.radius = radius\n        self.minimum_cluster = minimum_cluster\n        # Mark if the point was already:\n        self.data_mark = {}\n        for point in self.data:",
         "detail": "DB-Scan (Class)",
         "documentation": {}
     },
