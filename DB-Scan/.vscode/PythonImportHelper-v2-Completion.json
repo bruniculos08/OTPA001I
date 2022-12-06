@@ -1,0 +1,73 @@
+[
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "dbScan",
+        "kind": 2,
+        "importPath": "DB-Scan",
+        "description": "DB-Scan",
+        "peekOfCode": "def dbScan(data, radius, minimum_cluster = 4):\n    # Mark if the point was already:\n    data_mark = {}\n    for point in data:\n        # No point has been selected yet:\n        data_mark[point] = {'Selected' : False}\n    # Start the groups creation:\n    data_groups = []\n    for point in data:\n        # if the point is already set as selected, so it has also been included in a group already, so...",
+        "detail": "DB-Scan",
+        "documentation": {}
+    },
+    {
+        "label": "dbScanBuild",
+        "kind": 2,
+        "importPath": "DB-Scan",
+        "description": "DB-Scan",
+        "peekOfCode": "def dbScanBuild(actual_point, data, data_mark, radius, minimum_cluster):\n    neighbors = []\n    num_neighbors = 0\n    # Verify how many and which are the points near the actual point:\n    for point in data:\n        # If the point is inside the radius of the actual point this point is a neighbor:\n        if point != actual_point and calcDist(actual_point, point) < (radius**2):\n            # If this point was not selected before then:\n            if data_mark[point]['Selected'] == False:\n                neighbors.append(point)",
+        "detail": "DB-Scan",
+        "documentation": {}
+    },
+    {
+        "label": "calcDist",
+        "kind": 2,
+        "importPath": "DB-Scan",
+        "description": "DB-Scan",
+        "peekOfCode": "def calcDist(p0, p1) -> float:\n    sum = 0\n    for i in range(0, len(p0)):\n        sum += (p0[i] - p1[i])**2\n    return sum\ndef PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")",
+        "detail": "DB-Scan",
+        "documentation": {}
+    },
+    {
+        "label": "PlotdbScan",
+        "kind": 2,
+        "importPath": "DB-Scan",
+        "description": "DB-Scan",
+        "peekOfCode": "def PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    # data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]\n    # radius = 20\n    X_circle_1 = np.linspace(-1, 1, 50)",
+        "detail": "DB-Scan",
+        "documentation": {}
+    }
+]
