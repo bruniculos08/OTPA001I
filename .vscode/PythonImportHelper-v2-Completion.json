@@ -1,34 +1,42 @@
 [
     {
-        "label": "INFINITE",
-        "importPath": "asyncio.windows_events",
-        "description": "asyncio.windows_events",
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
         "isExtraImport": true,
-        "detail": "asyncio.windows_events",
+        "detail": "math",
         "documentation": {}
     },
     {
-        "label": "INFINITE",
-        "importPath": "asyncio.windows_events",
-        "description": "asyncio.windows_events",
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
         "isExtraImport": true,
-        "detail": "asyncio.windows_events",
+        "detail": "math",
         "documentation": {}
     },
     {
-        "label": "INFINITE",
-        "importPath": "asyncio.windows_events",
-        "description": "asyncio.windows_events",
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
         "isExtraImport": true,
-        "detail": "asyncio.windows_events",
+        "detail": "math",
         "documentation": {}
     },
     {
-        "label": "INFINITE",
-        "importPath": "asyncio.windows_events",
-        "description": "asyncio.windows_events",
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
         "isExtraImport": true,
-        "detail": "asyncio.windows_events",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
         "documentation": {}
     },
     {
@@ -69,6 +77,15 @@
         "description": "math",
         "isExtraImport": true,
         "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
         "documentation": {}
     },
     {
@@ -97,37 +114,117 @@
         "documentation": {}
     },
     {
-        "label": "*",
-        "importPath": "heapq",
-        "description": "heapq",
-        "isExtraImport": true,
-        "detail": "heapq",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "heapq",
-        "description": "heapq",
-        "isExtraImport": true,
-        "detail": "heapq",
-        "documentation": {}
-    },
-    {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
-        "documentation": {}
-    },
-    {
         "label": "matplotlib.pyplot",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "matplotlib.pyplot",
         "description": "matplotlib.pyplot",
         "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "make_blobs",
+        "importPath": "sklearn.datasets",
+        "description": "sklearn.datasets",
+        "isExtraImport": true,
+        "detail": "sklearn.datasets",
+        "documentation": {}
+    },
+    {
+        "label": "make_blobs",
+        "importPath": "sklearn.datasets",
+        "description": "sklearn.datasets",
+        "isExtraImport": true,
+        "detail": "sklearn.datasets",
+        "documentation": {}
+    },
+    {
+        "label": "DBSCAN",
+        "importPath": "sklearn.cluster",
+        "description": "sklearn.cluster",
+        "isExtraImport": true,
+        "detail": "sklearn.cluster",
+        "documentation": {}
+    },
+    {
+        "label": "DBSCAN",
+        "importPath": "sklearn.cluster",
+        "description": "sklearn.cluster",
+        "isExtraImport": true,
+        "detail": "sklearn.cluster",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "INFINITE",
+        "importPath": "asyncio.windows_events",
+        "description": "asyncio.windows_events",
+        "isExtraImport": true,
+        "detail": "asyncio.windows_events",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "heapq",
+        "description": "heapq",
+        "isExtraImport": true,
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "heapq",
+        "description": "heapq",
+        "isExtraImport": true,
+        "detail": "heapq",
+        "documentation": {}
+    },
+    {
+        "label": "mplot3d",
+        "importPath": "mpl_toolkits",
+        "description": "mpl_toolkits",
+        "isExtraImport": true,
+        "detail": "mpl_toolkits",
+        "documentation": {}
+    },
+    {
+        "label": "mplot3d",
+        "importPath": "mpl_toolkits",
+        "description": "mpl_toolkits",
+        "isExtraImport": true,
+        "detail": "mpl_toolkits",
         "documentation": {}
     },
     {
@@ -190,6 +287,51 @@
         "documentation": {}
     },
     {
+        "label": "DB_Scan",
+        "kind": 6,
+        "importPath": "DB-Scan.DB-Scan (Class)",
+        "description": "DB-Scan.DB-Scan (Class)",
+        "peekOfCode": "class DB_Scan():\n    def __init__(self):\n        pass\n    def dbScan(self, data, radius, minimum_cluster):\n        self.data = data\n        self.radius = radius\n        self.minimum_cluster = minimum_cluster\n        # Mark if the point was already:\n        self.data_mark = {}\n        for point in self.data:",
+        "detail": "DB-Scan.DB-Scan (Class)",
+        "documentation": {}
+    },
+    {
+        "label": "dbScan",
+        "kind": 2,
+        "importPath": "DB-Scan.DB-Scan",
+        "description": "DB-Scan.DB-Scan",
+        "peekOfCode": "def dbScan(data, radius, minimum_cluster = 4):\n    # Mark if the point was already:\n    data_mark = {}\n    for point in data:\n        # No point has been selected yet:\n        data_mark[point] = {'Selected' : False}\n    # Start the groups creation:\n    data_groups = []\n    for point in data:\n        # if the point is already set as selected, so it has also been included in a group already, so...",
+        "detail": "DB-Scan.DB-Scan",
+        "documentation": {}
+    },
+    {
+        "label": "dbScanBuild",
+        "kind": 2,
+        "importPath": "DB-Scan.DB-Scan",
+        "description": "DB-Scan.DB-Scan",
+        "peekOfCode": "def dbScanBuild(actual_point, data, data_mark, radius, minimum_cluster):\n    neighbors = []\n    num_neighbors = 0\n    # Verify how many and which are the points near the actual point:\n    for point in data:\n        # If the point is inside the radius of the actual point this point is a neighbor:\n        if point != actual_point and calcDist(actual_point, point) < (radius**2):\n            # If this point was not selected before then:\n            if data_mark[point]['Selected'] == False:\n                neighbors.append(point)",
+        "detail": "DB-Scan.DB-Scan",
+        "documentation": {}
+    },
+    {
+        "label": "calcDist",
+        "kind": 2,
+        "importPath": "DB-Scan.DB-Scan",
+        "description": "DB-Scan.DB-Scan",
+        "peekOfCode": "def calcDist(p0, p1) -> float:\n    sum = 0\n    for i in range(0, len(p0)):\n        sum += (p0[i] - p1[i])**2\n    return sum\ndef PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")",
+        "detail": "DB-Scan.DB-Scan",
+        "documentation": {}
+    },
+    {
+        "label": "PlotdbScan",
+        "kind": 2,
+        "importPath": "DB-Scan.DB-Scan",
+        "description": "DB-Scan.DB-Scan",
+        "peekOfCode": "def PlotdbScan(data_groups, file_name):\n    for group in data_groups:\n        hexadecimal = [\"#\"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]\n        plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)\n    plt.savefig(f\"C:\\\\Users\\\\bruni\\\\OneDrive\\\\Documentos\\\\GitHub\\\\OTPA001I\\\\DB-Scan\\\\{file_name}.png\")\n    plt.close()\nif __name__ == \"__main__\":\n    # data = [(random.uniform(1, 200), random.uniform(1, 200)) for _ in range(200)]\n    # radius = 20\n    X_circle_1 = np.linspace(-1, 1, 50)",
+        "detail": "DB-Scan.DB-Scan",
+        "documentation": {}
+    },
+    {
         "label": "createAdjMatrix",
         "kind": 2,
         "importPath": "Dijkstra.Dijkstra",
@@ -241,6 +383,15 @@
         "description": "Dijkstra with Heap.Dijkstra",
         "peekOfCode": "def dijkstra(start, end, graph):\n    Mark = {}\n    Predecessor = {}\n    isNotTemp = {}\n    PriorityQueue = []\n    # (1) Mark[v] represent the known lowest distance between vertice v and the start vertice and...\n    # ...isNotTemp[v] tells if the vertice has a permanent mark:\n    for vertice in graph.keys():\n        Mark[vertice] = INFINITE\n        isNotTemp[vertice] = False",
         "detail": "Dijkstra with Heap.Dijkstra",
+        "documentation": {}
+    },
+    {
+        "label": "K_Means",
+        "kind": 6,
+        "importPath": "k-Means.kMeans (Class)",
+        "description": "k-Means.kMeans (Class)",
+        "peekOfCode": "class K_Means():\n    def __init__(self):\n        pass\n    # This function receives the number of clusters k, the data points (a list of tuples) and the number of iterations:\n    def kMeans(self, k, data, iterations=1):\n        self.k = k\n        self.data = data\n        self.iterations = iterations\n        # Unzip a list of tuples returns other list of tuples where each element is a tuple with the values of the corresponding...\n        # ... index of the tuples in the previus list:",
+        "detail": "k-Means.kMeans (Class)",
         "documentation": {}
     },
     {
@@ -880,6 +1031,24 @@
         "description": "Semana15.game",
         "peekOfCode": "game = Game()\ngame.run()",
         "detail": "Semana15.game",
+        "documentation": {}
+    },
+    {
+        "label": "DB_Scan",
+        "kind": 6,
+        "importPath": "Semana16.DB-Scan (Class)",
+        "description": "Semana16.DB-Scan (Class)",
+        "peekOfCode": "class DB_Scan():\n    def __init__(self):\n        pass\n    def dbScan(self, data, radius, minimum_cluster):\n        self.data = data\n        self.radius = radius\n        self.minimum_cluster = minimum_cluster\n        # Mark if the point was already:\n        self.data_mark = {}\n        for point in self.data:",
+        "detail": "Semana16.DB-Scan (Class)",
+        "documentation": {}
+    },
+    {
+        "label": "K_Means",
+        "kind": 6,
+        "importPath": "Semana16.kMeans (Class)",
+        "description": "Semana16.kMeans (Class)",
+        "peekOfCode": "class K_Means():\n    def __init__(self):\n        pass\n    # This function receives the number of clusters k, the data points (a list of tuples) and the number of iterations:\n    def kMeans(self, k, data, iterations=1):\n        self.k = k\n        self.data = data\n        self.iterations = iterations\n        # Unzip a list of tuples returns other list of tuples where each element is a tuple with the values of the corresponding...\n        # ... index of the tuples in the previus list:",
+        "detail": "Semana16.kMeans (Class)",
         "documentation": {}
     }
 ]
