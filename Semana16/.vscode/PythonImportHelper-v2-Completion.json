@@ -1,0 +1,96 @@
+[
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "make_blobs",
+        "importPath": "sklearn.datasets",
+        "description": "sklearn.datasets",
+        "isExtraImport": true,
+        "detail": "sklearn.datasets",
+        "documentation": {}
+    },
+    {
+        "label": "DBSCAN",
+        "importPath": "sklearn.cluster",
+        "description": "sklearn.cluster",
+        "isExtraImport": true,
+        "detail": "sklearn.cluster",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "mplot3d",
+        "importPath": "mpl_toolkits",
+        "description": "mpl_toolkits",
+        "isExtraImport": true,
+        "detail": "mpl_toolkits",
+        "documentation": {}
+    },
+    {
+        "label": "DB_Scan",
+        "kind": 6,
+        "importPath": "DB-Scan (Class)",
+        "description": "DB-Scan (Class)",
+        "peekOfCode": "class DB_Scan():\n    def __init__(self):\n        pass\n    def dbScan(self, data, radius, minimum_cluster):\n        self.data = data\n        self.radius = radius\n        self.minimum_cluster = minimum_cluster\n        # Mark if the point was already:\n        self.data_mark = {}\n        for point in self.data:",
+        "detail": "DB-Scan (Class)",
+        "documentation": {}
+    },
+    {
+        "label": "K_Means",
+        "kind": 6,
+        "importPath": "kMeans (Class)",
+        "description": "kMeans (Class)",
+        "peekOfCode": "class K_Means():\n    def __init__(self):\n        pass\n    # This function receives the number of clusters k, the data points (a list of tuples) and the number of iterations:\n    def kMeans(self, k, data, iterations=1):\n        self.k = k\n        self.data = data\n        self.iterations = iterations\n        # Unzip a list of tuples returns other list of tuples where each element is a tuple with the values of the corresponding...\n        # ... index of the tuples in the previus list:",
+        "detail": "kMeans (Class)",
+        "documentation": {}
+    }
+]

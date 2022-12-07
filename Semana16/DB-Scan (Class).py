@@ -96,7 +96,7 @@ class DB_Scan():
             else:
                 hexadecimal = ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
             plt.scatter(*zip(*group), color = hexadecimal, marker='o', s = 100, alpha = 0.5)
-        plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\DB-Scan\\{file_name}.png")
+        plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\Semana16\\{file_name}.png")
         plt.close()
 
 if __name__ == "__main__":
@@ -118,4 +118,4 @@ if __name__ == "__main__":
     scan = DB_Scan()
 
     scan.dbScan(data, radius, minimum_cluster)
-    scan.PlotdbScan('Exemplo01 (DB-Scan)')
+    scan.PlotdbScan('Exemple01 (DB-Scan)')

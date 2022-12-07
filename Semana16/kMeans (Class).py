@@ -73,17 +73,26 @@ class K_Means():
             plt.scatter(*zip(*[point]), color = hexadecimal, marker='o', s = 100, alpha = 0.5)
             for point_data in self.data_groups[i]:
                 plt.scatter(*zip(*[point_data]), color = hexadecimal)
-        plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\k-Means\\{file_name}.png")
+        plt.savefig(f"C:\\Users\\bruni\\OneDrive\\Documentos\\GitHub\\OTPA001I\\Semana16\\{file_name}.png")
         plt.close()
 
 
 if __name__ == "__main__":
 
-    # Exemple01 (2d plot):
+    # Exemple01:
     X = [random.uniform(1, 200) for _ in range(200)]
     Y = [random.uniform(1, 200) for _ in range(200)]
     data = list(zip(X, Y))
 
+    # # Exemple02:
+    # X_circle_1 = np.linspace(-1, 1, 200)
+    # Y_circle_1 = [sqrt(1 - x**2) for x in X_circle_1]
+    # X_circle_2 = np.linspace(-2, 2, 200)
+    # Y_circle_2 = [sqrt(4 - x**2) for x in X_circle_2]
+    # X_circle_3 = np.linspace(-2, 2, 200)
+    # Y_circle_3 = [sqrt(4.5 - x**2) for x in X_circle_3]
+    # data = list(zip(X_circle_1, Y_circle_1)) + list(zip(X_circle_2, Y_circle_2)) + list(zip(X_circle_3, Y_circle_3))
+
     scan = K_Means()
-    scan.kMeans(10, data, 5)
-    scan.PlotkMeans("Exemplo03 (k-Means)")
+    scan.kMeans(2, data, 5)
+    scan.PlotkMeans("Exemple01 (k-Means)")
